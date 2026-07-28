@@ -1,0 +1,42 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": true,
+  "container": {
+    "count": 1,
+    "id": "extradelight:tray"
+  },
+  "cookingtime": 800,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "tfc:food/mutton"
+    },
+    {
+      "item": "tfc:food/mutton"
+    },
+    {
+      "item": "tfc:food/mutton"
+    },
+    {
+      "item": "tfc:food/mutton"
+    },
+    {
+      "tag": "forge:mint"
+    },
+    {
+      "tag": "forge:bread/crumbs"
+    },
+    {
+      "type":"tfc:fluid_item",
+      "fluid_ingredient":{
+        "ingredient":{
+          "tag": "survivorsdelight:cooking_oils"
+        }, "amount":100
+      }
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:mint_lamb_feast"
+  }
+}

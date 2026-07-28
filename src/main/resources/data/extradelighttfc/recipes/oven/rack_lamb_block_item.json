@@ -1,0 +1,48 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": true,
+  "container": {
+    "count": 1,
+    "id": "extradelight:tray"
+  },
+  "cookingtime": 1600,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:mutton/ribs"
+    },
+    {
+      "type":"tfc:fluid_item",
+      "fluid_ingredient":{
+        "ingredient":{
+          "tag": "survivorsdelight:cooking_oils"
+        }, "amount":100
+      }
+    },
+    {
+      "tag": "forge:mutton/ribs"
+    },
+    {
+      "tag": "forge:mutton/ribs"
+    },
+    {
+      "tag": "extradelight:processed/onion"
+    },
+    {
+      "tag": "forge:mutton/ribs"
+    },
+    {
+      "tag": "survivorsdelight:fruit_for_cheesecake"
+    },
+    {
+      "tag": "forge:bread/crumbs"
+    },
+    {
+      "tag": "survivorsdelight:fruit_for_cheesecake"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:rack_lamb_block_item"
+  }
+}

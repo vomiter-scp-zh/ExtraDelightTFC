@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bricks"
+    },
+    "H": {
+      "item": "minecraft:brick_slab"
+    },
+    "S": {
+      "item": "minecraft:brick_stairs"
+    }
+  },
+  "pattern": [
+    "SHS",
+    "B B",
+    "HHH"
+  ],
+  "result": {
+    "item": "extradelight:oven"
+  },
+  "show_notification": true
+}

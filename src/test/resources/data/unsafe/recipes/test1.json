@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [],
+  "result": [
+    {
+      "item": "minecraft:flint"
+    }
+  ],
+  "tool": [
+    {
+      "tag": "minecraft:shovels"
+    }
+  ]
+}

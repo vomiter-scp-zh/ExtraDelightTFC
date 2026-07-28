@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "tag": "tfc:foods/breads"
+      }
+    }
+  ],
+  "result": [
+    {
+      "modifiers": [
+        "tfc:copy_food"
+      ],
+      "stack": {
+        "count": 4,
+        "item": "extradelight:breadcrumbs"
+      }
+    }
+  ],
+  "tool": {
+    "item": "extradelight:grater"
+  }
+}

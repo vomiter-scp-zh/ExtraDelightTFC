@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "experience": 1.0,
+  "fluid": {
+    "amount": 200,
+    "ingredient": "tfc:vinegar"
+  },
+  "ingredients": [
+    {
+      "item": "tfc:food/tomato"
+    },
+    {
+      "item": "tfc:food/onion"
+    },
+    {
+      "tag": "tfc:sweetener"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "extradelight:bbq_jar_item"
+  }
+}

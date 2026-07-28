@@ -1,0 +1,35 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 500,
+      "fluid": "extradelight:bbq_fluid"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "forge:pork/scrap/cooked"
+    },
+    {
+      "tag": "forge:pork/scrap/cooked"
+    },
+    {
+      "tag": "forge:pork/scrap/cooked"
+    },
+    {
+      "tag": "forge:pork/scrap/cooked"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:pulled_pork_block_item"
+  },
+  "stirs": 4,
+  "utensil": {
+    "tag": "forge:rods"
+  }
+}

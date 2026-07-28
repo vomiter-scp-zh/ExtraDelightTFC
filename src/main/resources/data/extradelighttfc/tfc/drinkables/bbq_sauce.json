@@ -1,0 +1,11 @@
+{
+  "ingredient":"extradelight:bbq_fluid",
+  "thirst": 1,
+  "food":
+    {
+      "hunger":1,
+      "saturation":0.15,
+      "vegetables":0.1
+    },
+  "may_drink_when_full":true
+}

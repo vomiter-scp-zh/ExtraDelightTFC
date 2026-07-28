@@ -1,0 +1,26 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "com.vomiter.extradelighttfc.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "BarrelBlockEntityMixin",
+    "DebugMixin",
+    "EDForgeEventMixin",
+    "EDMixingBowlBlockEntityMixin",
+    "EDOvenBlockEntityMixin",
+    "RecipeFeastMixin",
+    "RecipeManager_FDFilterMixin",
+    "SDTempFoodContainerMixin",
+    "fancy_tank.FancyTankInSlotMixin",
+    "fancy_tank.FancyTankOutSlotMixin",
+    "fancy_tank.FluidBottleRegistryMixin",
+    "fancy_tank.MixingBowlBlockEntityMixin_FancyTank"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "extradelighttfc.mixins.refmap.json"
+}

@@ -1,0 +1,12 @@
+{
+  "type":"tfc:anvil",
+  "input":{
+    "tag":"forge:sheets/wrought_iron"
+  },
+  "result":
+    {
+      "item":"extradelight:pie_dish"
+    },
+  "tier":3,
+  "rules":["draw_any","punch_last","punch_not_last"]
+}

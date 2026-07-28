@@ -1,0 +1,10 @@
+{
+  "ingredient": {
+    "item": "extradelight:sliced_apple"
+  },
+  "hunger": 1,
+  "saturation": 0.1,
+  "water": 0.0,
+  "decay_modifier": 1.7,
+  "fruit": 0.3
+}

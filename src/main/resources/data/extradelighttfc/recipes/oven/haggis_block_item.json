@@ -1,0 +1,43 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": true,
+  "container": {
+    "count": 1,
+    "id": "extradelight:tray"
+  },
+  "cookingtime": 1600,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "forge:offal"
+    },
+    {
+      "tag": "forge:offal"
+    },
+    {
+      "tag": "forge:offal"
+    },
+    {
+      "tag": "forge:lung"
+    },
+    {
+      "tag": "forge:stomach"
+    },
+    {
+      "tag": "forge:meat/scrap"
+    },
+    {
+      "tag": "tfc:foods/grains"
+    },
+    {
+      "tag": "tfc:foods/grains"
+    },
+    {
+      "tag": "tfc:foods/grains"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:haggis_block_item"
+  }
+}

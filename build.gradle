@@ -1,0 +1,87 @@
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.spongepowered.mixin' version '0.7.+'
+    id 'com.vomiter.forge-base' version "0.1.0"
+    id 'com.vomiter.dev-runtime' version "0.1.0"
+    id 'com.vomiter.langmerge' version "0.1.0"
+}
+
+vomiterMod {
+    modId = mod_id
+    // 需要的話可以關掉某些功能
+    // enableMixinExtras = false
+    // enableDevJar = false
+}
+
+langMerge { modId = mod_id }
+
+version = mod_version
+group = mod_group_id
+base { archivesName = mod_id }
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: mapping_channel, version: mapping_version
+    copyIdeResources = true
+}
+
+apply from: 'gradle/runs.gradle'
+apply from: 'gradle/publishing-local.gradle'
+apply from: 'gradle/mixin.gradle'
+apply from: 'gradle/tfc-dep.gradle'
+
+/*
+repositories {
+    maven {
+        url "https://cursemaven.com"
+        content { includeGroup "curse.maven" }
+    }
+    maven { url "https://maven.blamejared.com" }
+}
+ */
+
+apply from: 'gradle/optional-dep.gradle'
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    annotationProcessor("org.spongepowered:mixin:${mixin_version}:processor")
+    implementation fg.deobf("curse.maven:farmers-delight-398521:8083474")
+    compileOnly fg.deobf("curse.maven:butchercraft-265715:6058842")
+    //runtimeOnly fg.deobf("curse.maven:butchercraft-265715:6058842")
+
+    //runtimeOnly fg.deobf("curse.maven:butchery-973620:8156002")
+    //implementation fg.deobf("curse.maven:tofucraftreload-317469:7788417")
+    //implementation fg.deobf("curse.maven:bagus-lib-866533:6944371")
+    //runtimeOnly fg.deobf("curse.maven:tough-as-nails-246391:5815863")
+    //runtimeOnly fg.deobf("curse.maven:glitchcore-955399:5787839")
+    //implementation fg.deobf("curse.maven:create-328085:7178761")
+
+
+    implementation fg.deobf("curse.maven:extra-delight-unofficial-port-1596264:8519242")
+
+    implementation fg.deobf("curse.maven:butchercraft-265715:6058842")
+    implementation fg.deobf("curse.maven:survivors-butchery-tfc-x-butchercraft-1415827:8435107")
+
+    compileOnly fg.deobf("curse.maven:architectury-api-419699:5137938")
+    compileOnly fg.deobf("curse.maven:rhino-416294:6186971")
+    compileOnly fg.deobf("curse.maven:kubejs-238086:8020595")
+
+    //runtimeOnly fg.deobf("curse.maven:architectury-api-419699:5137938")
+    //runtimeOnly fg.deobf("curse.maven:rhino-416294:6186971")
+    //runtimeOnly fg.deobf("curse.maven:kubejs-238086:8020595")
+
+    /*
+     */
+}
+
+//devRuntime.project(":common", true)
+
+/*
+/summon piglin ~ ~ ~ {IsImmuneToZombification:1,HandItems:[{id:crossbow,Count:1},{}]}
+/summon piglin ~ ~ ~ {IsImmuneToZombification:1,HandItems:[{id:diamond_axe,Count:1},{}]}
+/summon piglin ~ ~ ~ {IsImmuneToZombification:1, NoAI:1b}
+/summon hoglin ~ ~ ~ {IsImmuneToZombification:1,NoAI:1b}
+ */

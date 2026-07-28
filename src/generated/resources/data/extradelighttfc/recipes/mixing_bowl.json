@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bowl"
+    },
+    "G": {
+      "item": "tfc:glue"
+    },
+    "P": {
+      "tag": "tfc:lumber"
+    }
+  },
+  "pattern": [
+    "PGP",
+    " B "
+  ],
+  "result": {
+    "item": "extradelight:mixing_bowl"
+  },
+  "show_notification": true
+}
