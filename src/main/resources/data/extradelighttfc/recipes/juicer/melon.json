@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:juicer",
+  "chance": 25,
+  "fluidOut": {
+    "amount": 100,
+    "id": "extradelight:melon_juice_fluid"
+  },
+  "ingredient":{"type":"tfc:not_rotten","ingredient":{"item":"tfc:food/melon_slice"}},
+  "result": {
+    "count": 1,
+    "id": "minecraft:pink_dye"
+  }
+}

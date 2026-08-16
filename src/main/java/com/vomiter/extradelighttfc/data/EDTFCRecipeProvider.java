@@ -38,6 +38,17 @@ public class EDTFCRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.JUICER.get())
+                        .pattern("R")
+                        .pattern("B")
+                        .pattern("S")
+                                .define('R', ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", "rods/copper")))
+                                .define('B', ItemTags.create(ResourceLocation.fromNamespaceAndPath("tfc", "barrels")))
+                                .define('S', ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", "sheets/copper")))
+                                        .unlockedBy("anything", has(Items.AIR))
+                                                .save(consumer, ExtraDelightTFC.modLoc(ExtraDelightItems.JUICER.getId().getPath()));
+
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.MIXING_BOWL.get())
                         .pattern("PGP")
                         .pattern(" B ")

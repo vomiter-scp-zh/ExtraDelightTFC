@@ -1,0 +1,11 @@
+{
+  "ingredient":"extradelight:orange_juice_fluid",
+  "thirst": 10,
+  "food":
+    {
+      "hunger":0,
+      "saturation":0,
+      "fruit":0.1
+    },
+  "may_drink_when_full":true
+}

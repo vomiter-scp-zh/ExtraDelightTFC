@@ -4,18 +4,24 @@ import com.mojang.logging.LogUtils;
 import com.vomiter.extradelighttfc.adapter.EDOvenCookingAdapter;
 import com.vomiter.extradelighttfc.adapter.dynamic.FoodModifierRegistry;
 import com.vomiter.extradelighttfc.data.EDTFCDataGenerator;
+import com.vomiter.extradelighttfc.event.EDTFCForgeEvents;
 import com.vomiter.extradelighttfc.registry.EDTFCBlockEntityTypes;
 import net.dries007.tfc.common.capabilities.food.FoodCapability;
 import net.dries007.tfc.common.items.Food;
 import net.dries007.tfc.common.items.TFCItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraftforge.common.ForgeConfig;
+import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 @Mod(ExtraDelightTFC.MOD_ID)
@@ -33,6 +39,8 @@ public class ExtraDelightTFC {
         EDTFCBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modBus);
         modBus.addListener(EDTFCDataGenerator::gather);
         modBus.addListener(this::commonSetup);
+        MinecraftForge.EVENT_BUS.addListener(EDTFCForgeEvents::onFinishUse);
+        context.registerConfig(ModConfig.Type.COMMON, ExtraDelightTFCConfig.SPEC);
         if(FMLEnvironment.dist.isClient()){
             modBus.addListener(this::clientSetup);
         }

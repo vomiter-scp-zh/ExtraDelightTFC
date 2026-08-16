@@ -7,7 +7,7 @@ import net.minecraftforge.fml.loading.FMLEnvironment;
 
 public class EDRecipeFilter {
     public static boolean shouldBlock(Recipe<?> recipe){
-        if (FMLEnvironment.production || true){
+        if (FMLEnvironment.production){
             if (recipe.getId().getNamespace().equals(ExtraDelight.MOD_ID)){
                 return !recipe.getType().equals(ExtraDelightRecipes.FEAST.get());
             }

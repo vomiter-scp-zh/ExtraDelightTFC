@@ -1,0 +1,11 @@
+{
+  "ingredient":"extradelight:tomato_juice_fluid",
+  "thirst": 10,
+  "food":
+    {
+      "hunger":0,
+      "saturation":0,
+      "vegetables":0.3
+    },
+  "may_drink_when_full":true
+}

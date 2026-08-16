@@ -9,6 +9,7 @@
     "EDForgeEventMixin",
     "EDMixingBowlBlockEntityMixin",
     "EDOvenBlockEntityMixin",
+    "JuicerBlockMixin",
     "RecipeFeastMixin",
     "RecipeManager_FDFilterMixin",
     "SDTempFoodContainerMixin",

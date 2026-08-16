@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "tfc:barrels"
+    },
+    "R": {
+      "tag": "forge:rods/copper"
+    },
+    "S": {
+      "tag": "forge:sheets/copper"
+    }
+  },
+  "pattern": [
+    "R",
+    "B",
+    "S"
+  ],
+  "result": {
+    "item": "extradelight:juicer"
+  },
+  "show_notification": true
+}

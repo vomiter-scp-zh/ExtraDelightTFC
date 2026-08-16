@@ -6,6 +6,8 @@ import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.vomiter.extradelight.common.complex.workstations.oven.OvenBlockEntity;
 import com.vomiter.extradelight.common.complex.workstations.oven.recipes.OvenRecipe;
+import com.vomiter.extradelight.registry.ExtraDelightItems;
+import com.vomiter.extradelighttfc.ExtraDelightTFCConfig;
 import com.vomiter.extradelighttfc.adapter.EDOvenCanCookAdapter;
 import com.vomiter.extradelighttfc.adapter.EDOvenCookingAdapter;
 import com.vomiter.extradelighttfc.compat.EDTFCFirmaLifeCompat;
@@ -46,6 +48,13 @@ public abstract class EDOvenBlockEntityMixin extends BlockEntity {
     @Shadow
     protected abstract Optional<OvenRecipe> getMatchingRecipe(RecipeWrapper inventoryWrapper);
 
+    @Shadow
+    public abstract ItemStackHandler getInventory();
+
+    @Shadow
+    @Final
+    public static int CONTAINER_SLOT;
+
     public EDOvenBlockEntityMixin(BlockEntityType<?> p_155228_, BlockPos p_155229_, BlockState p_155230_) {
         super(p_155228_, p_155229_, p_155230_);
     }
@@ -83,6 +92,11 @@ public abstract class EDOvenBlockEntityMixin extends BlockEntity {
             Level level, BlockPos pos, BlockState state, OvenBlockEntity oven, CallbackInfo ci,
             @Local(name = "recipe") Optional<OvenRecipe> recipe){
         if(recipe.isPresent()) return;
+        if (ExtraDelightTFCConfig.OVEN_REQUIRES_SHEET.get()){
+            if(!oven.getInventory()
+                    .getStackInSlot(CONTAINER_SLOT)
+                    .is(ExtraDelightItems.SHEET.get())) return;
+        }
         if(ModList.get().isLoaded("firmalife")){
             EDTFCFirmaLifeCompat.ovenCooking(level, pos, state, oven);
         }
