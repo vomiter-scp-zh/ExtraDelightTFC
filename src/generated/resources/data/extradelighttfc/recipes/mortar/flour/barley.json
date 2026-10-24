@@ -1,0 +1,18 @@
+{
+  "type": "extradelighttfc:mortar",
+  "grinds": 8,
+  "ingredient": {
+    "type": "tfc:not_rotten",
+    "ingredient": {
+      "item": "tfc:food/barley_grain"
+    }
+  },
+  "result": {
+    "modifiers": [
+      "tfc:copy_food"
+    ],
+    "stack": {
+      "item": "tfc:food/barley_flour"
+    }
+  }
+}

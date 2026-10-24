@@ -1,0 +1,11 @@
+{
+  "type": "extradelighttfc:mortar",
+  "grinds": 4,
+  "ingredient": {
+    "tag": "tfc:makes_purple_dye"
+  },
+  "result": {
+    "count": 2,
+    "item": "minecraft:purple_dye"
+  }
+}

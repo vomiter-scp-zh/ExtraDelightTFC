@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rock": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "tfc:rock_knapping"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "extradelighttfc:crafting/mortar_stone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_rock",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "extradelighttfc:crafting/mortar_stone"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -38,6 +38,7 @@ public class EDTFCRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+        EDTFCMortarRecipes.build(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.JUICER.get())
                         .pattern("R")
                         .pattern("B")

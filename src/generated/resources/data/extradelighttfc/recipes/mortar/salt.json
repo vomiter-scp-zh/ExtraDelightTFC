@@ -1,0 +1,11 @@
+{
+  "type": "extradelighttfc:mortar",
+  "grinds": 8,
+  "ingredient": {
+    "item": "tfc:ore/halite"
+  },
+  "result": {
+    "count": 4,
+    "item": "tfc:powder/salt"
+  }
+}

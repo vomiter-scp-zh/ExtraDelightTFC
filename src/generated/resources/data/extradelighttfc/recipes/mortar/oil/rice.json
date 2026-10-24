@@ -1,0 +1,11 @@
+{
+  "type": "extradelighttfc:mortar",
+  "fluid_output": {
+    "amount": 50,
+    "fluid": "extradelight:oil_fluid"
+  },
+  "grinds": 4,
+  "ingredient": {
+    "item": "tfc:seeds/rice"
+  }
+}

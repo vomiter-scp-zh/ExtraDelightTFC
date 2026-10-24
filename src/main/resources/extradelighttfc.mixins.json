@@ -9,6 +9,8 @@
     "DebugMixin",
     "EDForgeEventMixin",
     "EDMixingBowlBlockEntityMixin",
+    "EDMortarBlockEntityMixin",
+    "EDMortarBlockMixin",
     "EDOvenBlockEntityMixin",
     "JuicerBlockMixin",
     "RecipeFeastMixin",

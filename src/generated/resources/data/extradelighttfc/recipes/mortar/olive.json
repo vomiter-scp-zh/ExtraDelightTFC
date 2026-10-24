@@ -1,0 +1,18 @@
+{
+  "type": "extradelighttfc:mortar",
+  "fluid_output": {
+    "amount": 100,
+    "fluid": "tfc:olive_oil_water"
+  },
+  "grinds": 4,
+  "ingredient": {
+    "type": "tfc:not_rotten",
+    "ingredient": {
+      "item": "tfc:food/olive"
+    }
+  },
+  "result": {
+    "count": 2,
+    "item": "tfc:olive_paste"
+  }
+}

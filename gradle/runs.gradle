@@ -26,7 +26,12 @@ minecraft {
 
         gameTestServer {
             property 'forge.enabledGameTestNamespaces', mod_id
-            mods { "${mod_id}" { source sourceSets.main } }
+            mods {
+                "${mod_id}" {
+                    source sourceSets.main
+                    source sourceSets.test
+                }
+            }
         }
 
         data {

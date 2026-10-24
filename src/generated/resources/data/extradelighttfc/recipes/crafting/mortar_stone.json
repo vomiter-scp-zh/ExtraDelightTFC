@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "tag": "tfc:rock/hardened"
+    }
+  },
+  "pattern": [
+    "R R",
+    " R "
+  ],
+  "result": {
+    "item": "extradelight:mortar_stone"
+  },
+  "show_notification": true
+}
