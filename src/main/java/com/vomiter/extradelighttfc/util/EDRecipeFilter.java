@@ -7,6 +7,12 @@ import net.minecraftforge.fml.loading.FMLEnvironment;
 
 public class EDRecipeFilter {
     public static boolean shouldBlock(Recipe<?> recipe){
+        // Keep the black-steel progression and salt-water requirement identical in dev and releases.
+        if (recipe.getId().getNamespace().equals(ExtraDelight.MOD_ID)
+                && (recipe.getType().equals(ExtraDelightRecipes.EVAPORATOR.get())
+                || recipe.getId().getPath().equals("crafting/evaporator"))) {
+            return true;
+        }
         if (FMLEnvironment.production){
             if (recipe.getId().getNamespace().equals(ExtraDelight.MOD_ID)){
                 return !recipe.getType().equals(ExtraDelightRecipes.FEAST.get());

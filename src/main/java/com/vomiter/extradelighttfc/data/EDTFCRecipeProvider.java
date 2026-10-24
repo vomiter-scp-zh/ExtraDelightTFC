@@ -1,13 +1,18 @@
 package com.vomiter.extradelighttfc.data;
 
+import com.google.gson.JsonObject;
+import com.vomiter.extradelight.registry.ExtraDelightBlocks;
 import com.vomiter.extradelight.registry.ExtraDelightItems;
+import com.vomiter.extradelight.registry.ExtraDelightRecipes;
 import com.vomiter.extradelighttfc.ExtraDelightTFC;
 import com.vomiter.extradelighttfc.util.FoodUtils;
 import com.vomiter.survivorsdelight.data.recipe.SDCuttingRecipe;
 import com.vomiter.survivorsdelight.data.recipe.builder.SDCuttingRecipeBuilder;
 import com.vomiter.survivorsdelight.data.recipe.builder.SDJsonAdapters;
 import net.dries007.tfc.common.TFCTags;
+import net.dries007.tfc.common.fluids.TFCFluids;
 import net.dries007.tfc.common.items.Food;
+import net.dries007.tfc.common.items.Powder;
 import net.dries007.tfc.common.items.TFCItems;
 import net.dries007.tfc.common.recipes.outputs.CopyFoodModifier;
 import net.dries007.tfc.common.recipes.outputs.ItemStackProvider;
@@ -24,14 +29,22 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.tag.CommonTags;
 
 import java.util.function.Consumer;
 
 public class EDTFCRecipeProvider extends RecipeProvider {
+    public static final ResourceLocation EVAPORATOR_SALT_LOOT = ExtraDelightTFC.modLoc("evaporator/salt");
+    private static final TagKey<Item> BLACK_STEEL_RODS = ItemTags.create(
+            ResourceLocation.fromNamespaceAndPath("forge", "rods/black_steel"));
+    private static final TagKey<Item> BLACK_STEEL_SHEETS = ItemTags.create(
+            ResourceLocation.fromNamespaceAndPath("forge", "sheets/black_steel"));
     public EDTFCRecipeProvider(PackOutput p_248933_) {
         super(p_248933_);
     }
@@ -39,6 +52,7 @@ public class EDTFCRecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         EDTFCMortarRecipes.build(consumer);
+        evaporator(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.JUICER.get())
                         .pattern("R")
                         .pattern("B")
@@ -78,6 +92,37 @@ public class EDTFCRecipeProvider extends RecipeProvider {
         grate(Food.CARROT, ExtraDelightItems.GRATED_CARROT, consumer);
         grate(Food.GARLIC, ExtraDelightItems.GRATED_GARLIC, consumer);
         grate(ItemTags.create(ResourceLocation.fromNamespaceAndPath("tfc", "foods/breads")), ExtraDelightItems.BREAD_CRUMBS, consumer);
+    }
+
+    private void evaporator(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightBlocks.EVAPORATOR.get())
+                .pattern("R R").pattern("SSS")
+                .define('R', BLACK_STEEL_RODS).define('S', BLACK_STEEL_SHEETS)
+                .unlockedBy("has_black_steel_sheet", has(BLACK_STEEL_SHEETS))
+                .save(consumer, ExtraDelightTFC.modLoc("crafting/evaporator"));
+        consumer.accept(new EvaporatorResult());
+    }
+
+    private record EvaporatorResult() implements FinishedRecipe {
+        @Override
+        public void serializeRecipeData(JsonObject json) {
+            JsonObject fluid = new JsonObject();
+            fluid.addProperty("fluid", TFCFluids.SALT_WATER.source().getId().toString());
+            fluid.addProperty("amount", 1000);
+            json.add("fluid", fluid);
+            json.addProperty("time", 10000);
+            json.addProperty("loottable", EVAPORATOR_SALT_LOOT.toString());
+            json.addProperty("display_block", ExtraDelightBlocks.SALT_BLOCK.getId().toString());
+            JsonObject result = new JsonObject();
+            result.addProperty("id", ForgeRegistries.ITEMS.getKey(TFCItems.POWDERS.get(Powder.SALT).get()).toString());
+            result.addProperty("count", 1);
+            json.add("outItem", result);
+        }
+
+        @Override public ResourceLocation getId() { return ExtraDelightTFC.modLoc("evaporator/salt_water"); }
+        @Override public RecipeSerializer<?> getType() { return ExtraDelightRecipes.EVAPORATOR_SERIALIZER.get(); }
+        @Override public @Nullable JsonObject serializeAdvancement() { return null; }
+        @Override public @Nullable ResourceLocation getAdvancementId() { return null; }
     }
 
     private void grate(TagKey<Item> tag, RegistryObject<Item> grated, Consumer<FinishedRecipe> consumer){

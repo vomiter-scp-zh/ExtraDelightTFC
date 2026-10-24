@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "tag": "forge:rods/black_steel"
+    },
+    "S": {
+      "tag": "forge:sheets/black_steel"
+    }
+  },
+  "pattern": [
+    "R R",
+    "SSS"
+  ],
+  "result": {
+    "item": "extradelight:evaporator"
+  },
+  "show_notification": true
+}

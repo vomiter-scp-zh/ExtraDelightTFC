@@ -1,0 +1,14 @@
+{
+  "type": "extradelight:evaporator",
+  "display_block": "extradelight:salt_block",
+  "fluid": {
+    "amount": 1000,
+    "fluid": "tfc:salt_water"
+  },
+  "loottable": "extradelighttfc:evaporator/salt",
+  "outItem": {
+    "count": 1,
+    "id": "tfc:powder/salt"
+  },
+  "time": 10000
+}
