@@ -10,6 +10,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.material.Fluid;
 
 public class EDTFCTags {
+    public static final TagKey<Item> DRYABLE_FOODS = ItemTags.create(ExtraDelightTFC.modLoc("dryable_foods"));
+    public static final TagKey<Item> FISH_FLAKES_INPUTS = ItemTags.create(ExtraDelightTFC.modLoc("fish_flakes_inputs"));
+    public static final TagKey<Item> SEAWEED_PASTE_INPUTS = ItemTags.create(ExtraDelightTFC.modLoc("seaweed_paste_inputs"));
 
     static TagKey<Fluid> FLUID_INGREDIENT
             = FluidTags.create(

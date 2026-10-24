@@ -5,6 +5,9 @@ import com.vomiter.extradelight.data.tags.ExtraDelightTags;
 import com.vomiter.extradelighttfc.registry.EDTFCItems;
 import com.vomiter.extradelighttfc.util.FoodUtils;
 import net.dries007.tfc.common.items.Food;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.resources.ResourceLocation;
+import java.util.EnumSet;
 import net.dries007.tfc.common.items.TFCItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -31,6 +34,17 @@ public class EDTFCItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
+        var fish = EnumSet.of(Food.COOKED_COD, Food.COOKED_TROPICAL_FISH, Food.COOKED_BLUEGILL,
+                Food.COOKED_CRAPPIE, Food.COOKED_LAKE_TROUT, Food.COOKED_LARGEMOUTH_BASS,
+                Food.COOKED_RAINBOW_TROUT, Food.COOKED_SALMON, Food.COOKED_SMALLMOUTH_BASS);
+        var cookedMeats = EnumSet.range(Food.COOKED_BEEF, Food.COOKED_SMALLMOUTH_BASS);
+        cookedMeats.removeAll(fish);
+        tag(EDTFCTags.DRYABLE_FOODS).addTag(ItemTags.create(ResourceLocation.fromNamespaceAndPath("tfc", "foods/fruits"))).addTag(ItemTags.create(ResourceLocation.fromNamespaceAndPath("tfc", "foods/raw_meats")));
+        cookedMeats.forEach(food -> tag(EDTFCTags.DRYABLE_FOODS).add(TFCItems.FOOD.get(food).get()));
+        fish.forEach(food -> tag(EDTFCTags.FISH_FLAKES_INPUTS).add(TFCItems.FOOD.get(food).get()));
+        tag(EDTFCTags.SEAWEED_PASTE_INPUTS).add(TFCItems.FOOD.get(Food.DRIED_SEAWEED).get(),
+                TFCItems.FOOD.get(Food.DRIED_KELP).get());
+
         tag(ExtraDelightTags.PESTLES).add(EDTFCItems.STONE_PESTLE.get());
         EDTFCItems.METAL_PESTLES.values().forEach(pestle -> tag(ExtraDelightTags.PESTLES).add(pestle.get()));
         tag(EDTFCTags.PROCESSED_ONION).add(FoodUtils.getFoodItem(Food.ONION));

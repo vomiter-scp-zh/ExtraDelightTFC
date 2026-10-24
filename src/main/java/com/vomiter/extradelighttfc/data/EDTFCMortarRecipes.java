@@ -84,6 +84,9 @@ public final class EDTFCMortarRecipes {
         save(consumer, "blaze_powder", Ingredient.of(Items.BLAZE_ROD),
                 ItemStackProvider.of(new ItemStack(Items.BLAZE_POWDER, 3)), FluidStack.EMPTY, 8);
 
+        save(consumer, "agar_agar", Ingredient.of(ExtraDelightItems.AGAR_SHEETS.get()),
+                ItemStackProvider.of(new ItemStack(ExtraDelightItems.AGAR_AGAR.get())), FluidStack.EMPTY, 8);
+
         // These are exactly the thirteen plant-dye inputs defined by TFC's quern.
         for (DyeColor color : EnumSet.complementOf(EnumSet.of(DyeColor.BLACK, DyeColor.CYAN, DyeColor.GRAY))) {
             save(consumer, "dye/" + color.getName(),

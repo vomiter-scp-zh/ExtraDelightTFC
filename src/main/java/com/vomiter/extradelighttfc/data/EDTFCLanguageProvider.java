@@ -31,6 +31,7 @@ public final class EDTFCLanguageProvider extends LanguageProvider {
         if (!chinese) {
             add("config.jade.plugin_extradelighttfc.feast_decay", "Feast Decay");
         }
+        add("extradelighttfc.tooltip.food_trait.dried", chinese ? "已乾燥" : "Dried");
         pestles();
     }
 

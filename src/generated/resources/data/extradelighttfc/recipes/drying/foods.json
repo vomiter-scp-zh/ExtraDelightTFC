@@ -1,0 +1,17 @@
+{
+  "type": "extradelighttfc:drying",
+  "cookingtime": 1000,
+  "experience": 10.0,
+  "ingredient": {
+    "type": "tfc:not_rotten",
+    "ingredient": {
+      "tag": "extradelighttfc:dryable_foods"
+    }
+  },
+  "result": {
+    "modifiers": [
+      "tfc:copy_input",
+      "extradelighttfc:dried"
+    ]
+  }
+}

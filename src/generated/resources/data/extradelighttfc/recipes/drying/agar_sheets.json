@@ -1,0 +1,13 @@
+{
+  "type": "extradelighttfc:drying",
+  "cookingtime": 1000,
+  "experience": 10.0,
+  "ingredient": {
+    "item": "extradelight:seaweed_paste"
+  },
+  "result": {
+    "stack": {
+      "item": "extradelight:agar_sheets"
+    }
+  }
+}

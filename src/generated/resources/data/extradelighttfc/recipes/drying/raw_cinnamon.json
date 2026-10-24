@@ -1,0 +1,13 @@
+{
+  "type": "extradelighttfc:drying",
+  "cookingtime": 1000,
+  "experience": 10.0,
+  "ingredient": {
+    "item": "extradelight:raw_cinnamon"
+  },
+  "result": {
+    "stack": {
+      "item": "extradelight:cinnamon_stick"
+    }
+  }
+}

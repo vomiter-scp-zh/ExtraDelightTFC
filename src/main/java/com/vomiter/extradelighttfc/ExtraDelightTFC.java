@@ -1,6 +1,9 @@
 package com.vomiter.extradelighttfc;
 
 import com.mojang.logging.LogUtils;
+import com.vomiter.extradelighttfc.common.recipe.DriedModifier;
+import com.vomiter.extradelighttfc.registry.EDTFCFoodTraits;
+import net.dries007.tfc.common.recipes.outputs.ItemStackModifiers;
 import com.vomiter.extradelighttfc.adapter.EDOvenCookingAdapter;
 import com.vomiter.extradelighttfc.adapter.dynamic.FoodModifierRegistry;
 import com.vomiter.extradelighttfc.data.EDTFCDataGenerator;
@@ -17,6 +20,7 @@ import net.minecraftforge.common.ForgeConfig;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -38,6 +42,9 @@ public class ExtraDelightTFC {
 
     public ExtraDelightTFC(FMLJavaModLoadingContext context) {
         IEventBus modBus = context.getModEventBus();
+        EDTFCFoodTraits.init();
+        MinecraftForge.EVENT_BUS.addListener(EventPriority.LOWEST, EDTFCFoodTraits::reloadDryingFoods);
+        ItemStackModifiers.register(modLoc("dried"), DriedModifier.INSTANCE);
         EDTFCBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modBus);
         EDTFCRecipeSerializers.SERIALIZERS.register(modBus);
         EDTFCItems.ITEMS.register(modBus);

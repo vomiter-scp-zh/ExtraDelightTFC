@@ -10,6 +10,9 @@ public class EDRecipeFilter {
         // Keep the black-steel progression and salt-water requirement identical in dev and releases.
         if (recipe.getId().getNamespace().equals(ExtraDelight.MOD_ID)
                 && (recipe.getType().equals(ExtraDelightRecipes.EVAPORATOR.get())
+                || recipe.getType().equals(ExtraDelightRecipes.DRYING_RACK.get())
+                || recipe.getId().getPath().equals("crafting/drying_rack")
+                || recipe.getId().getPath().equals("cooking/seaweed_paste")
                 || recipe.getId().getPath().equals("crafting/evaporator"))) {
             return true;
         }

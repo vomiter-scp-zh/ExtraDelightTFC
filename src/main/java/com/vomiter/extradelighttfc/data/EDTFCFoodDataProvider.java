@@ -23,6 +23,14 @@ public class EDTFCFoodDataProvider extends SDFoodDataProvider {
         cut4(ExtraDelightItems.GRATED_GARLIC, Food.GARLIC);
         cut4(ExtraDelightItems.POTATO_STICKS, Food.POTATO);
         cut4(ExtraDelightItems.BREAD_CRUMBS, Food.BARLEY_BREAD);
+        newBuilder("fish_flakes")
+                .item(ExtraDelightItems.FISH_FLAKES.get())
+                .slicedFrom(Food.COOKED_COD, 1)
+                .save();
+        newBuilder("dried_chili")
+                .item(ExtraDelightItems.DRIED_CHILI.get())
+                .setHunger(4).setSaturation(1).setVegetables(1).setDecay(0.5)
+                .save();
         newBuilder("butter")
                 .item(ExtraDelightItems.BUTTER.get())
                 .setDecay(4.5)

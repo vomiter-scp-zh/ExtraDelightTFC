@@ -1,0 +1,13 @@
+{
+  "type": "extradelighttfc:drying",
+  "cookingtime": 24000,
+  "experience": 10.0,
+  "ingredient": {
+    "item": "tfc:drying_bricks/loam"
+  },
+  "result": {
+    "stack": {
+      "item": "tfc:mud_brick/loam"
+    }
+  }
+}

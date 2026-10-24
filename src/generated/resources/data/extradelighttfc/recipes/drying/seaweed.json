@@ -1,0 +1,19 @@
+{
+  "type": "extradelighttfc:drying",
+  "cookingtime": 1000,
+  "experience": 10.0,
+  "ingredient": {
+    "type": "tfc:not_rotten",
+    "ingredient": {
+      "item": "tfc:food/fresh_seaweed"
+    }
+  },
+  "result": {
+    "modifiers": [
+      "tfc:copy_food"
+    ],
+    "stack": {
+      "item": "tfc:food/dried_seaweed"
+    }
+  }
+}
