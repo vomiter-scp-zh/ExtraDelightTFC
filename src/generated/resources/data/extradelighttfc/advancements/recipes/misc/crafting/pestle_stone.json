@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rock": {
+    "has_hardened_rock": {
       "conditions": {
         "items": [
           {
-            "tag": "tfc:rock_knapping"
+            "tag": "tfc:rock/hardened"
           }
         ]
       },
@@ -20,7 +20,7 @@
   },
   "requirements": [
     [
-      "has_rock",
+      "has_hardened_rock",
       "has_the_recipe"
     ]
   ],

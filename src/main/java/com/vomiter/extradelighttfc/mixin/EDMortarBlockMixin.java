@@ -1,9 +1,13 @@
 package com.vomiter.extradelighttfc.mixin;
 
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.sugar.Local;
 import com.vomiter.extradelight.common.complex.workstations.mortar.MortarBlock;
 import com.vomiter.extradelight.common.complex.workstations.mortar.MortarBlockEntity;
 import com.vomiter.extradelight.util.BlockEntityUtils;
 import com.vomiter.extradelight.util.BottleFluidRegistry;
+import com.vomiter.extradelight.data.tags.ExtraDelightTags;
 import com.vomiter.extradelighttfc.adapter.FancyFluidHandlerAdapter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -23,6 +27,27 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(MortarBlock.class)
 public abstract class EDMortarBlockMixin {
+    @WrapOperation(method = "use", at = @At(value = "INVOKE",
+            target = "Lcom/vomiter/extradelight/common/complex/workstations/mortar/MortarBlockEntity;grind(Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/InteractionResult;",
+            remap = false))
+    private InteractionResult edtfc$wearPestle(MortarBlockEntity mortar, Player player,
+                                             Operation<InteractionResult> original,
+                                             @Local(argsOnly = true) InteractionHand hand) {
+        InteractionHand pestleHand = player.getItemInHand(hand).is(ExtraDelightTags.PESTLES)
+                ? hand : InteractionHand.OFF_HAND;
+        int previousProgress = mortar.getGrind();
+        int previousCount = mortar.getInsertedItem().getCount();
+        InteractionResult result = original.call(mortar, player);
+        if (mortar.getLevel() != null && !mortar.getLevel().isClientSide
+                && (mortar.getGrind() != previousProgress || mortar.getInsertedItem().getCount() < previousCount)) {
+            ItemStack pestle = player.getItemInHand(pestleHand);
+            if (pestle.is(ExtraDelightTags.PESTLES)) {
+                pestle.hurtAndBreak(1, player, user -> user.broadcastBreakEvent(pestleHand));
+            }
+        }
+        return result;
+    }
+
     @Inject(method = "use", at = @At("HEAD"), cancellable = true)
     private void edtfc$bottleRegisteredVolume(BlockState state, Level level, BlockPos pos, Player player,
                                              InteractionHand hand, BlockHitResult hit,

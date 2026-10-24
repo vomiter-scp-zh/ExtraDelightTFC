@@ -22,6 +22,9 @@ public class EDTFCDataGenerator {
                 output, lookupProvider, blockTag.contentsGetter(), ExtraDelightTFC.MOD_ID, helper
         ));
         generator.addProvider(event.includeServer(), new EDTFCRecipeProvider(output));
+        generator.addProvider(event.includeClient(), new EDTFCItemModelProvider(output, helper));
+        generator.addProvider(event.includeClient(), new EDTFCLanguageProvider(output, "en_us"));
+        generator.addProvider(event.includeClient(), new EDTFCLanguageProvider(output, "zh_tw"));
         generator.addProvider(event.includeServer(), new EDTFCFluidTagProvider(output, lookupProvider, ExtraDelightTFC.MOD_ID, helper));
         var food = new EDTFCFoodDataProvider(output);
         food.save();

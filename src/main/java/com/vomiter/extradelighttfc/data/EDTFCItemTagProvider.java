@@ -1,6 +1,8 @@
 package com.vomiter.extradelighttfc.data;
 
 import com.vomiter.extradelight.registry.ExtraDelightItems;
+import com.vomiter.extradelight.data.tags.ExtraDelightTags;
+import com.vomiter.extradelighttfc.registry.EDTFCItems;
 import com.vomiter.extradelighttfc.util.FoodUtils;
 import net.dries007.tfc.common.items.Food;
 import net.dries007.tfc.common.items.TFCItems;
@@ -29,6 +31,8 @@ public class EDTFCItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
+        tag(ExtraDelightTags.PESTLES).add(EDTFCItems.STONE_PESTLE.get());
+        EDTFCItems.METAL_PESTLES.values().forEach(pestle -> tag(ExtraDelightTags.PESTLES).add(pestle.get()));
         tag(EDTFCTags.PROCESSED_ONION).add(FoodUtils.getFoodItem(Food.ONION));
         tag(EDTFCTags.PROCESSED_TOMATO).add(FoodUtils.getFoodItem(Food.TOMATO));
         tag(EDTFCTags.PROCESSED_POTATO).add(FoodUtils.getFoodItem(Food.POTATO));

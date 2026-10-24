@@ -1,0 +1,15 @@
+{
+  "type": "tfc:anvil",
+  "apply_forging_bonus": true,
+  "input": {
+    "tag": "forge:ingots/bronze"
+  },
+  "result": {
+    "item": "extradelighttfc:pestle/bronze"
+  },
+  "rules": [
+    "punch_last",
+    "shrink_not_last"
+  ],
+  "tier": 2
+}

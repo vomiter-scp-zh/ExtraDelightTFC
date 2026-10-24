@@ -42,6 +42,8 @@ minecraft {
 
             args '--mod', mod_id,
                     '--all',
+                    '--existing-mod', 'tfc',
+                    '--existing-mod', 'extradelight',
                     '--output', file('src/generated/resources/'),
                     '--existing', file('src/main/resources/')
 

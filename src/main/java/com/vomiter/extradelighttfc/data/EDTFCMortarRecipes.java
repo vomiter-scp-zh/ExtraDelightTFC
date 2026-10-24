@@ -1,22 +1,27 @@
 package com.vomiter.extradelighttfc.data;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.vomiter.extradelight.registry.ExtraDelightFluids;
 import com.vomiter.extradelight.registry.ExtraDelightItems;
 import com.vomiter.extradelighttfc.ExtraDelightTFC;
+import com.vomiter.extradelighttfc.registry.EDTFCItems;
 import com.vomiter.extradelighttfc.registry.EDTFCRecipeSerializers;
 import com.vomiter.survivorsdelight.data.recipe.builder.SDJsonAdapters;
 import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blocks.crop.Crop;
 import net.dries007.tfc.common.blocks.rock.Ore;
+import net.dries007.tfc.common.capabilities.forge.ForgeRule;
 import net.dries007.tfc.common.fluids.SimpleFluid;
 import net.dries007.tfc.common.fluids.TFCFluids;
 import net.dries007.tfc.common.items.Food;
 import net.dries007.tfc.common.items.Powder;
 import net.dries007.tfc.common.items.TFCItems;
+import net.dries007.tfc.common.recipes.TFCRecipeSerializers;
 import net.dries007.tfc.common.recipes.ingredients.NotRottenIngredient;
 import net.dries007.tfc.common.recipes.outputs.CopyFoodModifier;
 import net.dries007.tfc.common.recipes.outputs.ItemStackProvider;
+import net.dries007.tfc.util.Metal;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -24,14 +29,17 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
@@ -39,6 +47,8 @@ import java.util.Locale;
 import java.util.function.Consumer;
 
 public final class EDTFCMortarRecipes {
+    private static final TagKey<Item> HARDENED_ROCK = ItemTags.create(
+            ResourceLocation.fromNamespaceAndPath("tfc", "rock/hardened"));
     private static final Crop[] GRAINS = {Crop.BARLEY, Crop.MAIZE, Crop.OAT, Crop.RYE, Crop.RICE, Crop.WHEAT};
 
     private EDTFCMortarRecipes() {}
@@ -48,15 +58,10 @@ public final class EDTFCMortarRecipes {
                 ItemPredicate.Builder.item().of(TFCTags.Items.ROCK_KNAPPING).build());
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.MORTAR_STONE.get())
                 .pattern("R R").pattern(" R ")
-                .define('R', ItemTags.create(ResourceLocation.fromNamespaceAndPath("tfc", "rock/hardened")))
+                .define('R', HARDENED_ROCK)
                 .unlockedBy("has_rock", hasRock)
                 .save(consumer, ExtraDelightTFC.modLoc("crafting/mortar_stone"));
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.PESTLE_STONE.get())
-                .pattern("R ").pattern(" S")
-                .define('R', ItemTags.create(ResourceLocation.fromNamespaceAndPath("tfc", "rock/hardened")))
-                .define('S', Items.STICK)
-                .unlockedBy("has_rock", hasRock)
-                .save(consumer, ExtraDelightTFC.modLoc("crafting/pestle_stone"));
+        pestles(consumer);
 
         for (Crop crop : GRAINS) {
             String name = crop.name().toLowerCase(Locale.ROOT);
@@ -85,6 +90,38 @@ public final class EDTFCMortarRecipes {
                     Ingredient.of(ItemTags.create(ResourceLocation.fromNamespaceAndPath("tfc", "makes_" + color.getName() + "_dye"))),
                     ItemStackProvider.of(new ItemStack(DyeItem.byColor(color), 2)), FluidStack.EMPTY, 4);
         }
+    }
+
+    private static void pestles(Consumer<FinishedRecipe> consumer) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, EDTFCItems.STONE_PESTLE.get())
+                .pattern("R ").pattern(" S")
+                .define('R', HARDENED_ROCK).define('S', Items.STICK)
+                .unlockedBy("has_hardened_rock", InventoryChangeTrigger.TriggerInstance.hasItems(
+                        ItemPredicate.Builder.item().of(HARDENED_ROCK).build()))
+                .save(consumer, ExtraDelightTFC.modLoc("crafting/pestle_stone"));
+        EDTFCItems.METAL_PESTLES.forEach((metal, item) -> consumer.accept(new AnvilResult(metal, item)));
+    }
+
+    private record AnvilResult(Metal.Default metal, RegistryObject<Item> item) implements FinishedRecipe {
+        @Override
+        public void serializeRecipeData(JsonObject json) {
+            TagKey<Item> ingots = ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", "ingots/" + metal.getSerializedName()));
+            json.add("input", Ingredient.of(ingots).toJson());
+            JsonObject result = new JsonObject();
+            result.addProperty("item", item.getId().toString());
+            json.add("result", result);
+            json.addProperty("tier", metal.metalTier().ordinal());
+            JsonArray rules = new JsonArray();
+            rules.add(ForgeRule.PUNCH_LAST.name().toLowerCase(Locale.ROOT));
+            rules.add(ForgeRule.SHRINK_NOT_LAST.name().toLowerCase(Locale.ROOT));
+            json.add("rules", rules);
+            json.addProperty("apply_forging_bonus", true);
+        }
+
+        @Override public ResourceLocation getId() { return ExtraDelightTFC.modLoc("anvil/pestle/" + metal.getSerializedName()); }
+        @Override public RecipeSerializer<?> getType() { return TFCRecipeSerializers.ANVIL.get(); }
+        @Override public @Nullable JsonObject serializeAdvancement() { return null; }
+        @Override public @Nullable ResourceLocation getAdvancementId() { return null; }
     }
 
     private static void save(Consumer<FinishedRecipe> consumer, String name, Ingredient ingredient,

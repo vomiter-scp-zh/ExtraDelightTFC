@@ -7,6 +7,7 @@ import com.vomiter.extradelighttfc.data.EDTFCDataGenerator;
 import com.vomiter.extradelighttfc.event.EDTFCForgeEvents;
 import com.vomiter.extradelighttfc.registry.EDTFCBlockEntityTypes;
 import com.vomiter.extradelighttfc.registry.EDTFCRecipeSerializers;
+import com.vomiter.extradelighttfc.registry.EDTFCItems;
 import net.dries007.tfc.common.capabilities.food.FoodCapability;
 import net.dries007.tfc.common.items.Food;
 import net.dries007.tfc.common.items.TFCItems;
@@ -39,6 +40,8 @@ public class ExtraDelightTFC {
         IEventBus modBus = context.getModEventBus();
         EDTFCBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modBus);
         EDTFCRecipeSerializers.SERIALIZERS.register(modBus);
+        EDTFCItems.ITEMS.register(modBus);
+        modBus.addListener(EDTFCItems::addCreativeItems);
         modBus.addListener(EDTFCDataGenerator::gather);
         modBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.addListener(EDTFCForgeEvents::onFinishUse);
