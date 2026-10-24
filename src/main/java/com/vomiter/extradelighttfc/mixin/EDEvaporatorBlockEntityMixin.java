@@ -73,8 +73,6 @@ public abstract class EDEvaporatorBlockEntityMixin implements IEvaporatorCalenda
         float temperature = Climate.getVanillaBiomeTemperature(level, evaporator.getBlockPos());
         if (!(temperature > 0.05D)) return;
 
-        // The original tick still handles this tick's random progress/completion.
-        // Catch up at the current climate's expected rate without replaying ticks.
         int remaining = Math.max(0, recipe.getCookTime() - cookTime);
         int bonus = (int) Math.min(remaining, Math.floor((elapsed - 1) * (double) Math.min(1F, temperature)));
         if (bonus > 0) cookTime += bonus;
