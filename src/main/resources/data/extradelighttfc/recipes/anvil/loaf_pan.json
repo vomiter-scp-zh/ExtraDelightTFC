@@ -5,7 +5,7 @@
   },
   "result":
     {
-      "item":"extradelight:load_pan"
+      "item":"extradelight:loaf_pan"
     },
   "tier":3,
   "rules":["draw_any","punch_last","punch_not_last"]
