@@ -1,0 +1,39 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "tag": "extradelighttfc:mixing_oils"
+    },
+    {
+      "amount": 250,
+      "tag": "extradelight:lemon_or_lime_juice"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelighttfc:mixing/tomato"
+    },
+    {
+      "tag": "extradelighttfc:mixing/cucumber"
+    },
+    {
+      "tag": "extradelighttfc:mixing/onion"
+    },
+    {
+      "tag": "forge:mint"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:shirazi_salad"
+  },
+  "stirs": 2,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

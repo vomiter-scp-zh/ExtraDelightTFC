@@ -1,0 +1,33 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid"
+    },
+    {
+      "amount": 250,
+      "fluid": "tfc:vinegar"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelighttfc:mixing/cabbage"
+    },
+    {
+      "item": "extradelight:sliced_apple"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:apple_slaw"
+  },
+  "stirs": 4,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

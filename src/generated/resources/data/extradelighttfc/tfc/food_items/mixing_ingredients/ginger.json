@@ -1,0 +1,10 @@
+{
+  "ingredient": {
+    "item": "extradelight:ginger"
+  },
+  "hunger": 4,
+  "saturation": 0.5,
+  "water": 0.0,
+  "decay_modifier": 0.4,
+  "vegetables": 2.0
+}

@@ -1,6 +1,15 @@
 package com.vomiter.extradelighttfc.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
+import com.vomiter.extradelight.registry.ExtraDelightItems;
+import com.vomiter.extradelight.registry.ExtraDelightFluids;
+import com.vomiter.extradelight.util.BlockEntityUtils;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.capability.IFluidHandler;
+import net.dries007.tfc.common.capabilities.food.FoodCapability;
+import net.minecraft.world.InteractionResult;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.vomiter.extradelight.common.complex.workstations.FancyTank;
 import com.vomiter.extradelight.common.complex.workstations.mixingbowl.MixingBowlBlockEntity;
@@ -25,7 +34,43 @@ import org.spongepowered.asm.mixin.injection.At;
 import java.util.Optional;
 
 @Mixin(value = MixingBowlBlockEntity.class, remap = false)
-public class EDMixingBowlBlockEntityMixin {
+public abstract class EDMixingBowlBlockEntityMixin {
+    @Shadow protected abstract Optional<MixingBowlRecipe> matchRecipe();
+
+    @WrapMethod(method = "mix")
+    private InteractionResult edtfc$validateMix(Player player, ItemStack utensil, Operation<InteractionResult> original) {
+        MixingBowlBlockEntity self = (MixingBowlBlockEntity) (Object) this;
+        if (self.getLevel() == null) return InteractionResult.FAIL;
+        if (self.getLevel().isClientSide) return InteractionResult.SUCCESS;
+        // Revalidate on every click: food can rot and fluids can change without slot notifications.
+        Optional<MixingBowlRecipe> matching = matchRecipe();
+        if (matching.isEmpty()) return InteractionResult.FAIL;
+        if (curRecipe != matching.get()) self.zeroProgress();
+        curRecipe = matching.get();
+        return original.call(player, utensil);
+    }
+
+    @WrapMethod(method = "handleEgg")
+    private InteractionResult edtfc$separateEgg(Player player, ItemStack egg, Operation<InteractionResult> original) {
+        MixingBowlBlockEntity self = (MixingBowlBlockEntity) (Object) this;
+        if (self.getLevel() == null || egg.isEmpty() || FoodCapability.isRotten(egg)) return InteractionResult.FAIL;
+        if (self.getLevel().isClientSide) return InteractionResult.SUCCESS;
+        FluidStack fluid = new FluidStack(ExtraDelightFluids.EGG_WHITE.FLUID.get(), 500);
+        if (fluids.fill(fluid, IFluidHandler.FluidAction.SIMULATE) != 500) return InteractionResult.FAIL;
+        ItemStack yolk = FoodCapability.updateFoodFromPrevious(egg, new ItemStack(ExtraDelightItems.EGG_YOLK.get()));
+        fluids.fill(fluid, IFluidHandler.FluidAction.EXECUTE);
+        egg.shrink(1);
+        BlockEntityUtils.Inventory.givePlayerItemStack(yolk, player, self.getLevel(), self.getBlockPos());
+        self.updateInventory();
+        return InteractionResult.SUCCESS;
+    }
+
+    @ModifyArg(method = "mix", at = @At(value = "INVOKE",
+            target = "Lcom/vomiter/extradelight/common/complex/workstations/mixingbowl/MixingBowlBlockEntity;clearItems(I)V"), index = 0)
+    private int edtfc$consumeRecipeContainerCount(int outputCount) {
+        return curRecipe.getContainer().getCount();
+    }
+
     @Shadow
     @Final
     private ItemStackHandler items;
@@ -64,6 +109,9 @@ public class EDMixingBowlBlockEntityMixin {
             Container container,
             Level level,
             Operation<Optional<Recipe<Container>>> original){
+        for (int i = 0; i < 9; i++) {
+            if (FoodCapability.isRotten(items.getStackInSlot(i))) return Optional.empty();
+        }
         var originalResult = original.call(instance, recipeType, container, level);
         if (originalResult.isEmpty()){
             var handler = new ItemStackHandler(14);

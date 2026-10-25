@@ -28,6 +28,7 @@ public class MixingBowlBlockEntityMixin_FancyTank {
         var self = (MixingBowlBlockEntity)(Object)this;
         
         return new ItemStackHandler(14) {
+            private boolean transferring;
             public boolean isItemValid(int slot, ItemStack stack) {
                 switch (slot) {
                     case LIQUID_IN_SLOT:
@@ -47,20 +48,23 @@ public class MixingBowlBlockEntityMixin_FancyTank {
             }
 
             protected void onContentsChanged(int slot) {
-                if (slot != 12 && slot != 13) {
-                    self.zeroProgress();
-                    self.updateInventory();
-                }
+                if (slot == 12 || slot == 13) return;
+                self.zeroProgress();
+                self.updateInventory();
+                if (slot != LIQUID_IN_SLOT && slot != LIQUID_OUT_SLOT) return;
 
-                if (slot == 10) {
-                    new FancyFluidHandlerAdapter<>().fillInternal(self, self.getItemHandler(), self.getFluidTank(), LIQUID_IN_SLOT);
-                    self.updateInventory();
+                if (transferring || self.getLevel() == null || self.getLevel().isClientSide) return;
+                transferring = true;
+                try {
+                    if (slot == LIQUID_IN_SLOT) {
+                        new FancyFluidHandlerAdapter<>().fillInternal(self, self.getItemHandler(), self.getFluidTank(), LIQUID_IN_SLOT);
+                    } else if (slot == LIQUID_OUT_SLOT) {
+                        new FancyFluidHandlerAdapter<>().drainInternal(self, self.getItemHandler(), self.getFluidTank(), LIQUID_OUT_SLOT);
+                    }
+                } finally {
+                    transferring = false;
                 }
-
-                if (slot == 11) {
-                    new FancyFluidHandlerAdapter<>().drainInternal(self, self.getItemHandler(), self.getFluidTank(), LIQUID_OUT_SLOT);
-                    self.updateInventory();
-                }
+                self.updateInventory();
 
             }
         };

@@ -1,0 +1,32 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 2,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "tfc:food/baked_potato"
+    },
+    {
+      "item": "tfc:food/baked_potato"
+    },
+    {
+      "tag": "extradelighttfc:mixing/onion"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "extradelight:potato_salad"
+  },
+  "stirs": 8,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

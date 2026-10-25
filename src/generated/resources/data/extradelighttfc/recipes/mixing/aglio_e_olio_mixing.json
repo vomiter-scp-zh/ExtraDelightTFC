@@ -1,0 +1,35 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "tag": "extradelighttfc:mixing_oils"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "extradelight:cooked_pasta"
+    },
+    {
+      "item": "extradelight:roasted_garlic"
+    },
+    {
+      "tag": "extradelighttfc:mixing/chili"
+    },
+    {
+      "tag": "extradelighttfc:mixing/cheese"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:aglio_e_olio"
+  },
+  "stirs": 2,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

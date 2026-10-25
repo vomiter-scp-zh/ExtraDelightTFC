@@ -1,0 +1,36 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:glass_bottle"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "tfc:vinegar"
+    },
+    {
+      "amount": 250,
+      "tag": "extradelighttfc:mixing_oils"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelighttfc:mixing/egg_or_yolk"
+    },
+    {
+      "tag": "extradelighttfc:mixing/egg_or_yolk"
+    },
+    {
+      "tag": "extradelighttfc:mixing/garlic"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:aioli_jar_item"
+  },
+  "stirs": 8,
+  "utensil": {
+    "item": "extradelight:whisk"
+  }
+}

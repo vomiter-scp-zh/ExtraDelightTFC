@@ -1,0 +1,13 @@
+{
+  "consume_chance": 0,
+  "food": {
+    "dairy": 0.0050000004,
+    "hunger": 0,
+    "protein": 0.040000003,
+    "saturation": 0.015000001,
+    "vegetables": 0.0
+  },
+  "ingredient": "extradelight:egg_white_fluid",
+  "may_drink_when_full": false,
+  "thirst": 0
+}

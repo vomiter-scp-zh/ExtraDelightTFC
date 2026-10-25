@@ -1,0 +1,15 @@
+{
+  "consume_chance": 0,
+  "food": {
+    "dairy": 1.0,
+    "hunger": 0,
+    "protein": 0.0,
+    "saturation": 0.0,
+    "vegetables": 0.0
+  },
+  "ingredient": {
+    "tag": "extradelighttfc:mixing_cream"
+  },
+  "may_drink_when_full": false,
+  "thirst": 10
+}

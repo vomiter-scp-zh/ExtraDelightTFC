@@ -5,6 +5,11 @@ import com.vomiter.extradelighttfc.common.recipe.DriedModifier;
 import com.vomiter.extradelighttfc.registry.EDTFCFoodTraits;
 import net.dries007.tfc.common.recipes.outputs.ItemStackModifiers;
 import com.vomiter.extradelighttfc.adapter.EDOvenCookingAdapter;
+import com.vomiter.extradelighttfc.adapter.EDMixingBowlAdapter;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import com.vomiter.extradelighttfc.adapter.dynamic.FoodModifierRegistry;
 import com.vomiter.extradelighttfc.data.EDTFCDataGenerator;
 import com.vomiter.extradelighttfc.event.EDTFCForgeEvents;
@@ -35,6 +40,7 @@ public class ExtraDelightTFC {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "extradelighttfc";
     public static final Logger LOGGER = LogUtils.getLogger();
+    private static final TagKey<Item> SWEETENER = ItemTags.create(ResourceLocation.fromNamespaceAndPath("tfc", "sweetener"));
 
     public static ResourceLocation modLoc(String s) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, s);
@@ -60,6 +66,18 @@ public class ExtraDelightTFC {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+
+            EDMixingBowlAdapter.registerIndividual((food, context) -> {
+                // Vanilla eggs and sugar are ingredients, not edible TFC food-capability items.
+                if (FoodCapability.get(context.stack()) == null) {
+                    if (context.stack().is(Items.EGG)) {
+                        food.addData(FoodCapability.get(new ItemStack(TFCItems.FOOD.get(Food.BOILED_EGG).get())).getData());
+                    } else if (context.stack().is(SWEETENER)) {
+                        food.hunger(2).saturation(0.5f);
+                    }
+                }
+                return food;
+            });
 
             EDOvenCookingAdapter.registerIndividual(((food, context) -> {
                 if(context.stack().is(ItemTags.create(ResourceLocation.fromNamespaceAndPath("tfc", "foods/grains")))){

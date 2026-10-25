@@ -61,6 +61,13 @@ public class EDTFCRecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         EDTFCMortarRecipes.build(consumer);
+        EDTFCMixingRecipes.build(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.WOODEN_SPOON.get())
+                .pattern("  L").pattern(" S ").pattern("S  ")
+                .define('L', ItemTags.create(ResourceLocation.fromNamespaceAndPath("tfc", "lumber")))
+                .define('S', Items.STICK)
+                .unlockedBy("has_lumber", has(ItemTags.create(ResourceLocation.fromNamespaceAndPath("tfc", "lumber"))))
+                .save(consumer, ExtraDelightTFC.modLoc("crafting/wooden_spoon"));
         evaporator(consumer);
         dryingRack(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.JUICER.get())

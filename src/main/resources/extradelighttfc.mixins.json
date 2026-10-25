@@ -25,10 +25,11 @@
     "fancy_tank.FancyTankInSlotMixin",
     "fancy_tank.FancyTankOutSlotMixin",
     "fancy_tank.FluidBottleRegistryMixin",
-    "fancy_tank.MixingBowlBlockEntityMixin_FancyTank"
+    "fancy_tank.MixingBowlBlockEntityMixin_FancyTank",
+    "FancyTankIngredientMixin",
+    "MixingBowlRecipeMixin"
   ],
-  "client": [
-  ],
+  "client": [],
   "injectors": {
     "defaultRequire": 1
   },

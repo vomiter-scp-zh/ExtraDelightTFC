@@ -1,0 +1,10 @@
+{
+  "ingredient": {
+    "item": "extradelight:mallow_powder"
+  },
+  "hunger": 2,
+  "saturation": 0.5,
+  "water": 0.0,
+  "decay_modifier": 1.0,
+  "vegetables": 0.5
+}

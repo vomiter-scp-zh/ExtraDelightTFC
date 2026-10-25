@@ -1,0 +1,28 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "fluids": [
+    {
+      "amount": 1000,
+      "tag": "extradelighttfc:mixing_cream"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "tfc:powder/salt"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "firmalife:food/butter"
+  },
+  "stirs": 8,
+  "utensil": {
+    "item": "extradelight:whisk"
+  }
+}

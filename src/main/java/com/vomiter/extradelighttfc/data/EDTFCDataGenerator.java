@@ -43,6 +43,7 @@ public class EDTFCDataGenerator {
         generator.addProvider(event.includeClient(), new EDTFCLanguageProvider(output, "en_us"));
         generator.addProvider(event.includeClient(), new EDTFCLanguageProvider(output, "zh_tw"));
         generator.addProvider(event.includeServer(), new EDTFCFluidTagProvider(output, lookupProvider, ExtraDelightTFC.MOD_ID, helper));
+        generator.addProvider(event.includeServer(), new EDTFCDrinkableProvider(output));
         var food = new EDTFCFoodDataProvider(output);
         food.save();
         generator.addProvider(event.includeServer(), food);

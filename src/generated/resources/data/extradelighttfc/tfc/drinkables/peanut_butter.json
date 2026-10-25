@@ -1,0 +1,13 @@
+{
+  "consume_chance": 0,
+  "food": {
+    "dairy": 0.0,
+    "hunger": 0,
+    "protein": 0.05,
+    "saturation": 0.15,
+    "vegetables": 0.0
+  },
+  "ingredient": "extradelight:nut_butter_fluid",
+  "may_drink_when_full": false,
+  "thirst": 0
+}

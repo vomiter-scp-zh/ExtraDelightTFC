@@ -6,7 +6,7 @@
   },
   "fluids": [
     {
-      "amount": 500,
+      "amount": 250,
       "fluid": "extradelight:bbq_fluid"
     }
   ],
@@ -30,6 +30,6 @@
   },
   "stirs": 4,
   "utensil": {
-    "tag": "forge:rods"
+    "tag": "forge:spoons"
   }
 }

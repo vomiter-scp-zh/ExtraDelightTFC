@@ -1,0 +1,33 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 2,
+    "id": "minecraft:glass_bottle"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:coffee_fluid"
+    },
+    {
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "forge:gelatin"
+    },
+    {
+      "tag": "extradelighttfc:mixing/sweetener"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "extradelight:coffee_jelly"
+  },
+  "stirs": 4,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

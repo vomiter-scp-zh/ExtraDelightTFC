@@ -1,0 +1,23 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "item": "extradelight:sugar_cookie_dough"
+    },
+    {
+      "item": "extradelight:grated_ginger"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:gingerbread_cookie_dough"
+  },
+  "stirs": 4,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

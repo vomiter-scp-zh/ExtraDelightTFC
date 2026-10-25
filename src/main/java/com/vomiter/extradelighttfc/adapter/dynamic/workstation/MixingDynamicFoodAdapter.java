@@ -48,15 +48,21 @@ public final class MixingDynamicFoodAdapter
     @Override
     public List<FluidStack> getInputFluids(IFluidHandler source, MixingBowlRecipe recipe) {
         List<FluidStack> result = new ArrayList<>();
+        int[] remaining = new int[source.getTanks()];
+        for (int i = 0; i < remaining.length; i++) remaining[i] = source.getFluidInTank(i).getAmount();
         for (SizedFluidIngredient sizedFluidIngredient : recipe.getFluids()) {
             var amount = sizedFluidIngredient.getAmount();
-            Fluid fluid = null;
             for (int i = 0; i < source.getTanks(); i++) {
-                if(sizedFluidIngredient.test(source.getFluidInTank(i))){
-                    fluid = source.getFluidInTank(i).getFluid();
+                FluidStack stored = source.getFluidInTank(i).copy();
+                stored.setAmount(remaining[i]);
+                if (sizedFluidIngredient.test(stored)) {
+                    FluidStack consumed = stored.copy();
+                    consumed.setAmount(amount);
+                    result.add(consumed);
+                    remaining[i] -= amount;
+                    break;
                 }
             }
-            if(fluid != null) result.add(new FluidStack(fluid, amount));
         }
         return result;
     }

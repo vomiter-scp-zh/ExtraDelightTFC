@@ -1,5 +1,11 @@
 {
   "type": "extradelight:mixing_bowl",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
   "container": {
     "count": 1,
     "id": "minecraft:bowl"
@@ -7,7 +13,7 @@
   "fluids": [
     {
       "amount": 250,
-      "tag": "tfc:milks"
+      "tag": "extradelighttfc:mixing_cream"
     }
   ],
   "ingredients": [],

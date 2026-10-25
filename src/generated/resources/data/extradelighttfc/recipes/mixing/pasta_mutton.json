@@ -1,0 +1,27 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [],
+  "ingredients": [
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "item": "extradelight:cooked_pasta"
+    },
+    {
+      "item": "tfc:food/cooked_mutton"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "farmersdelight:pasta_with_mutton_chop"
+  },
+  "stirs": 2,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

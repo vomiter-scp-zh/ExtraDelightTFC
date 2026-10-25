@@ -1,0 +1,10 @@
+{
+  "ingredient": {
+    "item": "extradelight:grapefruit"
+  },
+  "hunger": 4,
+  "saturation": 0.5,
+  "water": 10.0,
+  "decay_modifier": 2.2,
+  "fruit": 0.5
+}

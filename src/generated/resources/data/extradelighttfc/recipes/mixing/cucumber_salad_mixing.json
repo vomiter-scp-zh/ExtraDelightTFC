@@ -1,0 +1,39 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 2,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "tag": "extradelighttfc:mixing_oils"
+    },
+    {
+      "amount": 250,
+      "fluid": "tfc:vinegar"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelighttfc:mixing/cucumber"
+    },
+    {
+      "tag": "extradelighttfc:mixing/garlic"
+    },
+    {
+      "tag": "extradelighttfc:mixing/ginger"
+    },
+    {
+      "tag": "forge:condiments/soy_sauce"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "extradelight:cucumber_salad"
+  },
+  "stirs": 2,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

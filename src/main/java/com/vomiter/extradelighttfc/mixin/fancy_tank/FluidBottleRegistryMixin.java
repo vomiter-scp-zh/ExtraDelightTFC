@@ -7,7 +7,6 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
 @Mixin(value = BottleFluidRegistry.class, remap = false)
 public class FluidBottleRegistryMixin {
-
     @ModifyConstant(
             method = "<clinit>",
             constant = @Constant(intValue = 250),

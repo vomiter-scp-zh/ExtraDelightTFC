@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "extradelight:boiled_egg"
+  },
+  "hunger": 4,
+  "saturation": 2.0,
+  "water": 10.0,
+  "decay_modifier": 4.0,
+  "protein": 1.5,
+  "dairy": 0.3
+}

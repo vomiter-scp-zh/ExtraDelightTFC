@@ -1,0 +1,31 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:mod_loaded",
+        "modid": "firmalife"
+      }
+    }
+  ],
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "tag": "tfc:milks"
+    }
+  ],
+  "ingredients": [],
+  "result": {
+    "count": 1,
+    "id": "extradelight:whipped_cream"
+  },
+  "stirs": 8,
+  "utensil": {
+    "item": "extradelight:whisk"
+  }
+}

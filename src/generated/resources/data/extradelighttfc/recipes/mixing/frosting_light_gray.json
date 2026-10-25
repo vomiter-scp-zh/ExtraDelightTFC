@@ -1,0 +1,28 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:whipped_cream_fluid"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelighttfc:mixing/butter"
+    },
+    {
+      "tag": "extradelighttfc:mixing/sweetener"
+    },
+    {
+      "tag": "forge:dyes/light_gray"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:frosting_light_gray"
+  },
+  "stirs": 2,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

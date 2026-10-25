@@ -1,0 +1,9 @@
+{
+  "values": [
+    "extradelight:butter",
+    {
+      "id": "firmalife:food/butter",
+      "required": false
+    }
+  ]
+}

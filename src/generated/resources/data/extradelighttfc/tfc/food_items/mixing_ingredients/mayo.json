@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "extradelight:mayo_jar_item"
+  },
+  "hunger": 4,
+  "saturation": 0.6,
+  "water": 0.0,
+  "decay_modifier": 4.5,
+  "protein": 1.6,
+  "dairy": 0.2
+}

@@ -1,0 +1,29 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelighttfc:mixing/boiled_eggs"
+    },
+    {
+      "tag": "extradelighttfc:mixing/boiled_eggs"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:egg_salad"
+  },
+  "stirs": 8,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

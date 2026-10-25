@@ -1,0 +1,32 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "extradelighttfc:mixing/flour"
+    },
+    {
+      "tag": "extradelighttfc:mixing/sweetener"
+    },
+    {
+      "tag": "extradelighttfc:mixing/butter"
+    },
+    {
+      "tag": "extradelighttfc:mixing/eggs"
+    },
+    {
+      "tag": "extradelighttfc:mixing/apple"
+    },
+    {
+      "tag": "forge:cinnamon/ground"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:apple_cookie_dough"
+  },
+  "stirs": 4,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

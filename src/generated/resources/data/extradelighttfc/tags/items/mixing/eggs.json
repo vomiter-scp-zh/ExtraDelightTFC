@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:egg",
+    {
+      "id": "#firmalife:foods/raw_eggs",
+      "required": false
+    }
+  ]
+}

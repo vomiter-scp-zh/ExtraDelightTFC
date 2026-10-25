@@ -1,0 +1,29 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "extradelighttfc:mixing/flour"
+    },
+    {
+      "tag": "extradelighttfc:mixing/sweetener"
+    },
+    {
+      "tag": "extradelighttfc:mixing/butter"
+    },
+    {
+      "tag": "extradelighttfc:mixing/eggs"
+    },
+    {
+      "item": "tfc:food/pumpkin_chunks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:pumpkin_cookie_dough"
+  },
+  "stirs": 4,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

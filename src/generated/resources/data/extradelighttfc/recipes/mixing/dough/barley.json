@@ -1,0 +1,28 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 100,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "tfc:food/barley_flour"
+    },
+    {
+      "item": "tfc:food/barley_flour"
+    },
+    {
+      "item": "tfc:food/barley_flour"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "id": "tfc:food/barley_dough"
+  },
+  "stirs": 8,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

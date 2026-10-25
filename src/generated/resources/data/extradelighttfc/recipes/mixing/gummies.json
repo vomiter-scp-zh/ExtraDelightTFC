@@ -1,0 +1,37 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 100,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelighttfc:mixing/sweetener"
+    },
+    {
+      "tag": "extradelighttfc:mixing/sweetener"
+    },
+    {
+      "tag": "forge:gelatin"
+    },
+    {
+      "tag": "forge:gelatin"
+    },
+    {
+      "tag": "forge:dyes"
+    },
+    {
+      "tag": "forge:dyes"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:gummies"
+  },
+  "stirs": 4,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

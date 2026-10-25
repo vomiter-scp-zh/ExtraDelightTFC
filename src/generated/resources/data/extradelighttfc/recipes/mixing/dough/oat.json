@@ -1,0 +1,28 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [
+    {
+      "amount": 100,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "tfc:food/oat_flour"
+    },
+    {
+      "item": "tfc:food/oat_flour"
+    },
+    {
+      "item": "tfc:food/oat_flour"
+    }
+  ],
+  "result": {
+    "count": 6,
+    "id": "tfc:food/oat_dough"
+  },
+  "stirs": 8,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

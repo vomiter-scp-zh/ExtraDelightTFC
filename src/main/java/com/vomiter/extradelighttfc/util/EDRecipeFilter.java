@@ -11,6 +11,7 @@ public class EDRecipeFilter {
         if (recipe.getId().getNamespace().equals(ExtraDelight.MOD_ID)
                 && (recipe.getType().equals(ExtraDelightRecipes.EVAPORATOR.get())
                 || recipe.getType().equals(ExtraDelightRecipes.DRYING_RACK.get())
+                || recipe.getType().equals(ExtraDelightRecipes.MIXING_BOWL.get())
                 || recipe.getId().getPath().equals("crafting/drying_rack")
                 || recipe.getId().getPath().equals("cooking/seaweed_paste")
                 || recipe.getId().getPath().equals("crafting/evaporator"))) {

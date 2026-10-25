@@ -1,5 +1,14 @@
 {
   "type": "extradelight:mixing_bowl",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:mod_loaded",
+        "modid": "firmalife"
+      }
+    }
+  ],
   "fluids": [
     {
       "amount": 250,

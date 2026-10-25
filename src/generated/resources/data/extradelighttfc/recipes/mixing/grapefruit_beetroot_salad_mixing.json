@@ -1,0 +1,35 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 2,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "tag": "extradelighttfc:mixing_oils"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelighttfc:mixing/grapefruit"
+    },
+    {
+      "tag": "extradelighttfc:mixing/beetroot"
+    },
+    {
+      "item": "tfc:powder/salt"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "extradelight:grapefruit_beetroot_salad"
+  },
+  "stirs": 2,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

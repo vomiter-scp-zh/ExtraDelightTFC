@@ -1,0 +1,23 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "fluids": [],
+  "ingredients": [
+    {
+      "tag": "forge:beef/ground"
+    },
+    {
+      "tag": "forge:fat"
+    },
+    {
+      "tag": "extradelighttfc:mixing/garlic"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "extradelight:salami_mix"
+  },
+  "stirs": 4,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

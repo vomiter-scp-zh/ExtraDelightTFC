@@ -1,0 +1,30 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 4,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [],
+  "ingredients": [
+    {
+      "item": "tfc:food/fresh_seaweed"
+    },
+    {
+      "item": "tfc:food/fresh_seaweed"
+    },
+    {
+      "tag": "forge:fish_flakes"
+    },
+    {
+      "tag": "forge:fish_flakes"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "extradelight:furikake"
+  },
+  "stirs": 4,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

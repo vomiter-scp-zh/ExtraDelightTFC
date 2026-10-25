@@ -1,0 +1,39 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 3,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "tag": "extradelighttfc:mixing_oils"
+    },
+    {
+      "amount": 250,
+      "fluid": "tfc:vinegar"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelighttfc:mixing/carrot"
+    },
+    {
+      "tag": "extradelighttfc:mixing/garlic"
+    },
+    {
+      "tag": "forge:chili/powder"
+    },
+    {
+      "item": "tfc:powder/salt"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "id": "extradelight:morkovcha"
+  },
+  "stirs": 8,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

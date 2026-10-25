@@ -1,0 +1,29 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 2,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "fluid": "extradelight:mayo_fluid"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelighttfc:mixing/cooked_fish"
+    },
+    {
+      "tag": "extradelighttfc:mixing/cooked_fish"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "extradelight:fish_salad"
+  },
+  "stirs": 8,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}

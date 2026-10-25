@@ -1,0 +1,36 @@
+{
+  "type": "extradelight:mixing_bowl",
+  "container": {
+    "count": 1,
+    "id": "minecraft:bowl"
+  },
+  "fluids": [
+    {
+      "amount": 250,
+      "tag": "extradelighttfc:mixing_oils"
+    },
+    {
+      "amount": 250,
+      "fluid": "tfc:vinegar"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "extradelighttfc:mixing/tomato"
+    },
+    {
+      "tag": "extradelighttfc:mixing/cucumber"
+    },
+    {
+      "item": "extradelight:breadcrumbs"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "extradelight:gazpacho"
+  },
+  "stirs": 8,
+  "utensil": {
+    "tag": "forge:spoons"
+  }
+}
