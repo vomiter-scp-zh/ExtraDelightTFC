@@ -13,6 +13,7 @@ public class EDRecipeFilter {
                 || recipe.getType().equals(ExtraDelightRecipes.DRYING_RACK.get())
                 || recipe.getType().equals(ExtraDelightRecipes.MIXING_BOWL.get())
                 || recipe.getType().equals(ExtraDelightRecipes.DOUGH_SHAPING.get())
+                || recipe.getId().getPath().equals("crafting/wooden_spoon")
                 || recipe.getId().getPath().equals("crafting/dough_shaping")
                 || recipe.getType().equals(ExtraDelightRecipes.OVEN.get())
                     && (recipe.getId().getPath().contains("cookie") || recipe.getId().getPath().contains("gingerbread"))

@@ -21,7 +21,24 @@ public final class EDTFCItems {
             () -> new TieredItem(TFCTiers.IGNEOUS_INTRUSIVE, new Item.Properties()));
     public static final Map<Metal.Default, RegistryObject<Item>> METAL_PESTLES = registerMetalPestles();
 
+    public static final RegistryObject<Item> STONE_SPOON_HEAD = ITEMS.register("spoon_head/stone",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> STONE_SPOON = ITEMS.register("spoon/stone",
+            () -> new TieredItem(TFCTiers.IGNEOUS_INTRUSIVE, new Item.Properties()));
+    public static final Map<Metal.Default, RegistryObject<Item>> METAL_SPOONS = registerMetalSpoons();
+
     private EDTFCItems() {}
+
+    private static Map<Metal.Default, RegistryObject<Item>> registerMetalSpoons() {
+        Map<Metal.Default, RegistryObject<Item>> items = new EnumMap<>(Metal.Default.class);
+        for (Metal.Default metal : Metal.Default.values()) {
+            if (metal.hasTools()) {
+                items.put(metal, ITEMS.register("spoon/" + metal.getSerializedName(),
+                        () -> new TieredItem(metal.toolTier(), new Item.Properties().rarity(metal.getRarity()))));
+            }
+        }
+        return Collections.unmodifiableMap(items);
+    }
 
     private static Map<Metal.Default, RegistryObject<Item>> registerMetalPestles() {
         Map<Metal.Default, RegistryObject<Item>> items = new EnumMap<>(Metal.Default.class);
@@ -38,6 +55,9 @@ public final class EDTFCItems {
         if (event.getTab() == ExtraDelightTabs.TAB.get()) {
             event.accept(STONE_PESTLE.get());
             METAL_PESTLES.values().forEach(pestle -> event.accept(pestle.get()));
+            event.accept(STONE_SPOON_HEAD.get());
+            event.accept(STONE_SPOON.get());
+            METAL_SPOONS.values().forEach(spoon -> event.accept(spoon.get()));
         }
     }
 }

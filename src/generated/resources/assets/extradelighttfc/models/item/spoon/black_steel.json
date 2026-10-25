@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "extradelighttfc:item/spoon/black_steel"
+  }
+}

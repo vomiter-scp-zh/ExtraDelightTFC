@@ -33,6 +33,12 @@ public final class EDTFCLanguageProvider extends LanguageProvider {
         }
         add("extradelighttfc.tooltip.food_trait.dried", chinese ? "已乾燥" : "Dried");
         pestles();
+        add(EDTFCItems.STONE_SPOON_HEAD.get(), chinese ? "石製湯匙頭" : "Stone Spoon Head");
+        add(EDTFCItems.STONE_SPOON.get(), chinese ? "石製湯匙" : "Stone Spoon");
+        EDTFCItems.METAL_SPOONS.forEach((metal, item) -> {
+            Name name = NAMES.get(metal);
+            add(item.get(), chinese ? name.chinese() + "湯匙" : name.english() + " Spoon");
+        });
     }
 
     private void pestles() {

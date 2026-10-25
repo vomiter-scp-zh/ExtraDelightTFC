@@ -15,6 +15,13 @@ public final class EDTFCItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         pestles();
+        withExistingParent("item/" + EDTFCItems.STONE_SPOON.getId().getPath(),
+                ResourceLocation.fromNamespaceAndPath("extradelight", "item/stone_spoon"));
+        withExistingParent("item/" + EDTFCItems.STONE_SPOON_HEAD.getId().getPath(), mcLoc("item/generated"))
+                .texture("layer0", modLoc("item/" + EDTFCItems.STONE_SPOON_HEAD.getId().getPath()));
+        EDTFCItems.METAL_SPOONS.values().forEach(item ->
+                withExistingParent("item/" + item.getId().getPath(), mcLoc("item/generated"))
+                        .texture("layer0", modLoc("item/" + item.getId().getPath())));
     }
 
     private void pestles() {

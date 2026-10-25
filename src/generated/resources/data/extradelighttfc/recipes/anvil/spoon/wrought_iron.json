@@ -1,0 +1,15 @@
+{
+  "type": "tfc:anvil",
+  "apply_forging_bonus": true,
+  "input": {
+    "tag": "forge:rods/wrought_iron"
+  },
+  "result": {
+    "item": "extradelighttfc:spoon/wrought_iron"
+  },
+  "rules": [
+    "punch_last",
+    "shrink_not_last"
+  ],
+  "tier": 3
+}

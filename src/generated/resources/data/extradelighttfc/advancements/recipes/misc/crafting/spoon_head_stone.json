@@ -1,11 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_lumber": {
+    "has_shovel_head": {
       "conditions": {
         "items": [
           {
-            "tag": "tfc:lumber"
+            "items": [
+              "tfc:stone/shovel_head/igneous_extrusive",
+              "tfc:stone/shovel_head/igneous_intrusive",
+              "tfc:stone/shovel_head/metamorphic",
+              "tfc:stone/shovel_head/sedimentary"
+            ]
           }
         ]
       },
@@ -13,20 +18,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "extradelighttfc:crafting/wooden_spoon"
+        "recipe": "extradelighttfc:crafting/spoon_head_stone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_lumber",
+      "has_shovel_head",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "extradelighttfc:crafting/wooden_spoon"
+      "extradelighttfc:crafting/spoon_head_stone"
     ]
   },
   "sends_telemetry_event": false

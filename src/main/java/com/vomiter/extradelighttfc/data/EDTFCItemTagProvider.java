@@ -12,6 +12,7 @@ import com.vomiter.extradelighttfc.registry.EDTFCItems;
 import com.vomiter.extradelighttfc.util.FoodUtils;
 import net.dries007.tfc.common.items.Food;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.resources.ResourceLocation;
 import java.util.EnumSet;
 import net.dries007.tfc.common.items.TFCItems;
@@ -41,6 +42,13 @@ public class EDTFCItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
+        TagKey<Item> forgeSpoons = ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", "spoons"));
+        tag(ExtraDelightTags.SPOONS).add(EDTFCItems.STONE_SPOON.get());
+        tag(forgeSpoons).add(EDTFCItems.STONE_SPOON.get());
+        EDTFCItems.METAL_SPOONS.values().forEach(spoon -> {
+            tag(ExtraDelightTags.SPOONS).add(spoon.get());
+            tag(forgeSpoons).add(spoon.get());
+        });
         for (var cookie : DoughProcessingRecipes.COOKIES) {
             tag(EDTFCTags.DYNAMIC_FOOD).add(cookie.dough().get(), cookie.baked().get());
             tag(EDTFCTags.COOKIE_BAKING_ITEMS).add(cookie.dough().get(), cookie.baked().get());

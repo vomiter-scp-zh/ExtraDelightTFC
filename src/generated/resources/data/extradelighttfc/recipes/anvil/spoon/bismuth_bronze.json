@@ -1,0 +1,15 @@
+{
+  "type": "tfc:anvil",
+  "apply_forging_bonus": true,
+  "input": {
+    "tag": "forge:rods/bismuth_bronze"
+  },
+  "result": {
+    "item": "extradelighttfc:spoon/bismuth_bronze"
+  },
+  "rules": [
+    "punch_last",
+    "shrink_not_last"
+  ],
+  "tier": 2
+}

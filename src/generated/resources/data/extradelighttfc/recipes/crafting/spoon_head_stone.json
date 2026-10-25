@@ -1,0 +1,29 @@
+{
+  "type": "tfc:damage_inputs_shapeless_crafting",
+  "recipe": {
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+      [
+        {
+          "item": "tfc:stone/shovel_head/igneous_extrusive"
+        },
+        {
+          "item": "tfc:stone/shovel_head/igneous_intrusive"
+        },
+        {
+          "item": "tfc:stone/shovel_head/metamorphic"
+        },
+        {
+          "item": "tfc:stone/shovel_head/sedimentary"
+        }
+      ],
+      {
+        "tag": "tfc:hammers"
+      }
+    ],
+    "result": {
+      "item": "extradelighttfc:spoon_head/stone"
+    }
+  }
+}
