@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "tag": "tfc:lumber"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "LSL",
+    " L "
+  ],
+  "result": {
+    "item": "extradelight:dough_shaping"
+  },
+  "show_notification": true
+}

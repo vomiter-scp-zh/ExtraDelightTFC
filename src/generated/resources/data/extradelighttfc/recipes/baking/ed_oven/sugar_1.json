@@ -1,0 +1,22 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 800,
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "extradelight:sugar_cookie_dough"
+      }
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "extradelight:sugar_cookie"
+  }
+}

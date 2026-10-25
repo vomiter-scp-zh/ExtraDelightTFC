@@ -1,0 +1,19 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "type": "tfc:not_rotten",
+    "ingredient": {
+      "item": "extradelight:raw_gingerbread_steve"
+    }
+  },
+  "result_item": {
+    "modifiers": [
+      "extradelighttfc:portion_food"
+    ],
+    "stack": {
+      "count": 1,
+      "item": "extradelight:gingerbread_steve"
+    }
+  },
+  "temperature": 200
+}

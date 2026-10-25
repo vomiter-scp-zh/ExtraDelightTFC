@@ -62,6 +62,13 @@ public class EDTFCRecipeProvider extends RecipeProvider {
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         EDTFCMortarRecipes.build(consumer);
         EDTFCMixingRecipes.build(consumer);
+        DoughProcessingRecipes.build(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.DOUGH_SHAPING.get())
+                .pattern("LSL").pattern(" L ")
+                .define('L', ItemTags.create(ResourceLocation.fromNamespaceAndPath("tfc", "lumber")))
+                .define('S', Items.STICK)
+                .unlockedBy("has_lumber", has(ItemTags.create(ResourceLocation.fromNamespaceAndPath("tfc", "lumber"))))
+                .save(consumer, ExtraDelightTFC.modLoc("crafting/dough_shaping"));
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ExtraDelightItems.WOODEN_SPOON.get())
                 .pattern("  L").pattern(" S ").pattern("S  ")
                 .define('L', ItemTags.create(ResourceLocation.fromNamespaceAndPath("tfc", "lumber")))

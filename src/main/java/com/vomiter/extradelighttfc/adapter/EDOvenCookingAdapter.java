@@ -4,6 +4,7 @@ import com.vomiter.extradelight.common.complex.workstations.oven.OvenBlock;
 import com.vomiter.extradelight.common.complex.workstations.oven.OvenBlockEntity;
 import com.vomiter.extradelight.common.complex.workstations.oven.recipes.OvenRecipe;
 import com.vomiter.extradelighttfc.adapter.dynamic.DynamicFoodCalculator;
+import com.vomiter.extradelighttfc.data.DoughProcessingRecipes;
 import com.vomiter.extradelighttfc.adapter.dynamic.DynamicFoodContext;
 import com.vomiter.extradelighttfc.adapter.dynamic.FoodModifierRegistry;
 import com.vomiter.extradelighttfc.adapter.dynamic.workstation.OvenDynamicFoodAdapter;
@@ -50,7 +51,7 @@ public final class EDOvenCookingAdapter {
             OvenRecipe recipe,
             Level level
     ) {
-        return DynamicFoodCalculator.calculate(
+        ItemStack cooked = DynamicFoodCalculator.calculate(
                 result,
                 inventory,
                 recipe,
@@ -59,6 +60,8 @@ public final class EDOvenCookingAdapter {
                 ADAPTER,
                 MODIFIERS
         );
+        return DoughProcessingRecipes.isCookieBaking(recipe.getId())
+                ? EDMixingBowlAdapter.inheritAge(cooked, ADAPTER.getInputs(inventory, recipe)) : cooked;
     }
 
     public static void heatCooking(Level level, BlockPos pos, BlockState state, OvenBlockEntity oven){

@@ -1,0 +1,26 @@
+{
+  "type": "firmalife:oven",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "duration": 800,
+  "ingredient": {
+    "type": "tfc:not_rotten",
+    "ingredient": {
+      "item": "extradelight:raw_gingerbread_alex"
+    }
+  },
+  "result_item": {
+    "modifiers": [
+      "extradelighttfc:portion_food"
+    ],
+    "stack": {
+      "count": 1,
+      "item": "extradelight:gingerbread_alex"
+    }
+  },
+  "temperature": 200
+}

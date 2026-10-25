@@ -72,6 +72,11 @@ public class EDTFCFirmaLifeCompat {
         }
     }
 
+    public static ItemStack getOvenReferenceResult(ItemStack ingredient, RegistryAccess access) {
+        var recipe = OvenRecipe.getRecipe(ingredient);
+        return recipe == null ? ItemStack.EMPTY : recipe.assemble(new ItemStackInventory(ingredient.copyWithCount(1)), access);
+    }
+
     public static ItemStack getOvenResult(ItemStack ingredient, Level level){
         var recipe = level.getRecipeManager()
                         .getRecipeFor(

@@ -37,6 +37,10 @@ public interface DynamicFoodAdapter<S, F, R extends Recipe<?>, C extends Dynamic
 
     List<FluidStack> getInputFluids(F source, R recipe);
 
+    default boolean heatsIngredients() {
+        return false;
+    }
+
 
     /**
      * 將原始輸入轉換成實際用於計算 FoodData 的形式。

@@ -2,6 +2,7 @@ package com.vomiter.extradelighttfc.adapter.dynamic;
 
 import com.vomiter.extradelighttfc.ExtraDelightTFC;
 import com.vomiter.extradelighttfc.util.FoodDataBuilder;
+import com.vomiter.extradelighttfc.util.ExtraNutrientsAfterHeating;
 import net.dries007.tfc.common.capabilities.food.FoodCapability;
 import net.dries007.tfc.common.capabilities.food.FoodData;
 import net.dries007.tfc.common.capabilities.food.FoodHandler;
@@ -106,6 +107,10 @@ public final class DynamicFoodCalculator {
                         .toList()
         );
 
+        int contributingFoods = (int) processedFoods.stream().filter(food -> food.data() != null).count();
+        ExtraNutrientsAfterHeating.recordScale(result,
+                adapter.getBalanceMultiplier(contributingFoods, source, recipe) / resultCount);
+
         dynamic.setCreationDate(
                 FoodCapability.getRoundedCreationDate()
         );
@@ -174,8 +179,10 @@ public final class DynamicFoodCalculator {
                             .individualModifiers()
             );
 
-            if (foodData == null) {
-                continue;
+            if (adapter.heatsIngredients()) {
+                var heated = ExtraNutrientsAfterHeating.heatForCalculation(foodStack, foodData, level.registryAccess());
+                foodStack = heated.stack();
+                foodData = heated.data();
             }
 
             processedFoods.add(
@@ -222,12 +229,13 @@ public final class DynamicFoodCalculator {
 
         float balanceMultiplier =
                 adapter.getBalanceMultiplier(
-                        foods.size(),
+                        (int) foods.stream().filter(food -> food.data() != null).count(),
                         source,
                         recipe
                 );
 
         for (ProcessedFood food : foods) {
+            if (food.data() == null) continue;
             builder.addBuilder(
                     FoodDataBuilder.from(food.data())
                             .mul(balanceMultiplier)

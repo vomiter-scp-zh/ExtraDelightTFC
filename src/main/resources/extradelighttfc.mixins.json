@@ -27,7 +27,10 @@
     "fancy_tank.FluidBottleRegistryMixin",
     "fancy_tank.MixingBowlBlockEntityMixin_FancyTank",
     "FancyTankIngredientMixin",
-    "MixingBowlRecipeMixin"
+    "MixingBowlRecipeMixin",
+    "HeatingRecipeNutrientsMixin",
+    "FLOvenRecipeNutrientsMixin",
+    "DoughShapingFoodMixin"
   ],
   "client": [],
   "injectors": {

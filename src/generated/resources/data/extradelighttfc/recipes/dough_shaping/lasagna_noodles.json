@@ -1,0 +1,13 @@
+{
+  "type": "extradelight:dough_shaping",
+  "ingredient": {
+    "type": "tfc:not_rotten",
+    "ingredient": {
+      "tag": "tfc:foods/dough"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "extradelight:lasagna_noodles"
+  }
+}

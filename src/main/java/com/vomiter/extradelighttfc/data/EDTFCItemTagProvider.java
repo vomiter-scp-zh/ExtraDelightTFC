@@ -1,5 +1,7 @@
 package com.vomiter.extradelighttfc.data;
 
+import vectorwing.farmersdelight.common.registry.ModItems;
+
 import com.vomiter.extradelight.registry.ExtraDelightItems;
 import com.vomiter.extradelight.registry.SummerCitrus;
 import com.vomiter.extradelight.registry.Fermentation;
@@ -39,6 +41,21 @@ public class EDTFCItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
+        for (var cookie : DoughProcessingRecipes.COOKIES) {
+            tag(EDTFCTags.DYNAMIC_FOOD).add(cookie.dough().get(), cookie.baked().get());
+            tag(EDTFCTags.COOKIE_BAKING_ITEMS).add(cookie.dough().get(), cookie.baked().get());
+            tag(EDTFCTags.EXTRA_NUTRIENT_AFTER_HEATING).add(cookie.dough().get());
+        }
+        tag(EDTFCTags.DYNAMIC_FOOD).add(ModItems.RAW_PASTA.get(), ExtraDelightItems.MACARONI.get(),
+                ExtraDelightItems.PENNE.get(), ExtraDelightItems.LASAGNA_NOODLES.get());
+        // Opt-in processing inputs, not their underlying raw ingredients.
+        tag(EDTFCTags.EXTRA_NUTRIENT_AFTER_HEATING).add(
+                ExtraDelightItems.APPLE_COOKIE_DOUGH.get(),
+                ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH.get(),
+                ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH.get(),
+                ExtraDelightItems.PUMPKIN_COOKIE_DOUGH.get(),
+                ExtraDelightItems.SUGAR_COOKIE_DOUGH.get(),
+                ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH.get());
         tag(ItemTags.create(ExtraDelightTFC.modLoc("mixing/flour"))).addTag(ItemTags.create(ResourceLocation.tryParse("tfc:foods/flour")));
         tag(ItemTags.create(ExtraDelightTFC.modLoc("mixing/sweetener"))).addTag(ItemTags.create(ResourceLocation.tryParse("tfc:sweetener")));
         tag(ItemTags.create(ExtraDelightTFC.modLoc("mixing/eggs"))).add(Items.EGG);

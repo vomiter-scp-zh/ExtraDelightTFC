@@ -1,0 +1,26 @@
+{
+  "type": "firmalife:oven",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "duration": 400,
+  "ingredient": {
+    "type": "tfc:not_rotten",
+    "ingredient": {
+      "item": "extradelight:nut_butter_cookie_dough"
+    }
+  },
+  "result_item": {
+    "modifiers": [
+      "extradelighttfc:portion_food"
+    ],
+    "stack": {
+      "count": 8,
+      "item": "extradelight:nut_butter_cookie"
+    }
+  },
+  "temperature": 200
+}

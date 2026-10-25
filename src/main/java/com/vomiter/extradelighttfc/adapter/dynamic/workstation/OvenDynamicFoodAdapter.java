@@ -5,6 +5,8 @@ import com.vomiter.extradelighttfc.adapter.dynamic.DynamicFoodAdapter;
 import com.vomiter.extradelighttfc.adapter.dynamic.DynamicFoodContext;
 import com.vomiter.extradelighttfc.compat.EDTFCFirmaLifeCompat;
 import com.vomiter.extradelighttfc.util.FoodUtils;
+import com.vomiter.extradelighttfc.util.ExtraNutrientsAfterHeating;
+import com.vomiter.extradelighttfc.data.DoughProcessingRecipes;
 import com.vomiter.survivorsdelight.util.FoodItemContainerApply;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -62,12 +64,26 @@ public final class OvenDynamicFoodAdapter
     }
 
     @Override
+    public float getBalanceMultiplier(int count, ItemStackHandler source, OvenRecipe recipe) {
+        return DoughProcessingRecipes.isCookieBaking(recipe.getId()) ? 1f
+                : DynamicFoodAdapter.super.getBalanceMultiplier(count, source, recipe);
+    }
+
+    @Override
+    public boolean heatsIngredients() {
+        return true;
+    }
+
+    @Override
     public ItemStack transformIngredient(
             ItemStack ingredient,
             ItemStackHandler inventory,
             OvenRecipe recipe,
             Level level
     ) {
+        if (DoughProcessingRecipes.isCookieBaking(recipe.getId())) {
+            return ExtraNutrientsAfterHeating.apply(ingredient, ingredient.copyWithCount(1), level.registryAccess());
+        }
         if (ModList.get().isLoaded("firmalife")) {
             ItemStack ovenResult
                     = EDTFCFirmaLifeCompat.getOvenResult(

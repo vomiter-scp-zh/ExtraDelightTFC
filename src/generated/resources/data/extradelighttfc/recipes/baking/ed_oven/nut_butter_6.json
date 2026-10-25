@@ -1,0 +1,52 @@
+{
+  "type": "extradelight:oven",
+  "consumeContainer": false,
+  "container": {
+    "count": 1,
+    "item": "extradelight:sheet"
+  },
+  "cookingtime": 400,
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "extradelight:nut_butter_cookie_dough"
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "extradelight:nut_butter_cookie_dough"
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "extradelight:nut_butter_cookie_dough"
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "extradelight:nut_butter_cookie_dough"
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "extradelight:nut_butter_cookie_dough"
+      }
+    },
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "extradelight:nut_butter_cookie_dough"
+      }
+    }
+  ],
+  "result": {
+    "count": 48,
+    "item": "extradelight:nut_butter_cookie"
+  }
+}

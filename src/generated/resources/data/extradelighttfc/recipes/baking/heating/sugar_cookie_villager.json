@@ -1,0 +1,19 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "type": "tfc:not_rotten",
+    "ingredient": {
+      "item": "extradelight:raw_sugar_cookie_villager"
+    }
+  },
+  "result_item": {
+    "modifiers": [
+      "extradelighttfc:portion_food"
+    ],
+    "stack": {
+      "count": 1,
+      "item": "extradelight:sugar_cookie_villager"
+    }
+  },
+  "temperature": 200
+}
