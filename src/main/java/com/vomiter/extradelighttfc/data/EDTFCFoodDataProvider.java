@@ -16,6 +16,9 @@ public class EDTFCFoodDataProvider extends SDFoodDataProvider {
     }
 
     public void save(){
+        newBuilder("unshucked_corn").item(ExtraDelightItems.UNSHUCKED_CORN.get()).from(Food.MAIZE).save();
+        newBuilder("cooked_corn").item(ExtraDelightItems.COOKED_CORN.get()).from(Food.MAIZE_BREAD).save();
+        newBuilder("popcorn").item(ExtraDelightItems.POPCORN.get()).from(Food.MAIZE_BREAD).save();
         // Fixed intermediates: one item corresponds to 500 mB in BottleFluidRegistry.
         newBuilder("mixing_ingredients/mayo").item(ExtraDelightItems.MAYO.get()).setHunger(4).setSaturation(0.6).setProtein(1.6).setVegetables(0).setDairy(0.2).setDecay(4.5).save();
         newBuilder("mixing_ingredients/egg_mix").item(ExtraDelightItems.EGG_MIX.get()).setHunger(8).setSaturation(4).setProtein(3).setVegetables(0).setDairy(10.5).setDecay(4.5).save();

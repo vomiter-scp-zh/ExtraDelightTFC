@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 100,
+  "experience": 0.35,
+  "fluid": {
+    "amount": 100,
+    "ingredient": "minecraft:water"
+  },
+  "ingredients": [
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "tfc:food/maize_grain"
+      }
+    }
+  ],
+  "result": {
+    "item": "extradelight:cooked_corn"
+  }
+}

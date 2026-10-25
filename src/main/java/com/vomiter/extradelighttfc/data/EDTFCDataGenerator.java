@@ -33,20 +33,46 @@ public class EDTFCDataGenerator {
                 output, lookupProvider, blockTag.contentsGetter(), ExtraDelightTFC.MOD_ID, helper
         ));
         generator.addProvider(event.includeServer(), new EDTFCRecipeProvider(output));
-        generator.addProvider(event.includeServer(), new LootTableProvider(output, Set.of(), List.of(
-                new LootTableProvider.SubProviderEntry(() -> consumer -> consumer.accept(
-                        EDTFCRecipeProvider.EVAPORATOR_SALT_LOOT,
-                        LootTable.lootTable().withPool(LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1))
-                                .add(LootItem.lootTableItem(TFCItems.POWDERS.get(Powder.SALT).get())))),
-                        LootContextParamSets.ARCHAEOLOGY),
-                new LootTableProvider.SubProviderEntry(EDTFCDecorationBlockLoot::new, LootContextParamSets.BLOCK))));
+        generator.addProvider(event.includeServer(), new LootTableProvider(
+                output,
+                Set.of(),
+                List.of(
+                        new LootTableProvider.SubProviderEntry(
+                                () -> consumer -> {
+                                    consumer.accept(
+                                            EDTFCRecipeProvider.EVAPORATOR_SALT_LOOT,
+                                            LootTable.lootTable().withPool(
+                                                    LootPool.lootPool()
+                                                            .setRolls(ConstantValue.exactly(1))
+                                                            .add(LootItem.lootTableItem(
+                                                                    TFCItems.POWDERS.get(Powder.SALT).get()
+                                                            ))
+                                            )
+                                    );
+                                },
+                                LootContextParamSets.ARCHAEOLOGY
+                        ),
+                        new LootTableProvider.SubProviderEntry(
+                                () -> EDTFCCornLoot::crop,
+                                LootContextParamSets.BLOCK
+                        ),
+                        new LootTableProvider.SubProviderEntry(
+                                () -> EDTFCCornLoot::shucking,
+                                LootContextParamSets.EMPTY
+                        ),
+                        new LootTableProvider.SubProviderEntry(
+                                EDTFCDecorationBlockLoot::new,
+                                LootContextParamSets.BLOCK
+                        )
+                )
+        ));
         generator.addProvider(event.includeClient(), new EDTFCItemModelProvider(output, helper));
         generator.addProvider(event.includeClient(), new EDTFCLanguageProvider(output, "en_us"));
         generator.addProvider(event.includeClient(), new EDTFCLanguageProvider(output, "zh_tw"));
         generator.addProvider(event.includeServer(), new EDTFCFluidTagProvider(output, lookupProvider, ExtraDelightTFC.MOD_ID, helper));
         generator.addProvider(event.includeServer(), new EDTFCDrinkableProvider(output));
         generator.addProvider(event.includeServer(), new DoughProcessingData(output));
+        generator.addProvider(event.includeServer(), new EDTFCHeatDataProvider(output));
         var food = new EDTFCFoodDataProvider(output);
         food.save();
         generator.addProvider(event.includeServer(), food);

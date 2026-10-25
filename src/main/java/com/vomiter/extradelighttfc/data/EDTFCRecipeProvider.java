@@ -61,6 +61,7 @@ public class EDTFCRecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         EDTFCDecorationRecipes.build(consumer);
+        CornRecipes.build(consumer);
         EDTFCMortarRecipes.build(consumer);
         EDTFCSpoonRecipes.build(consumer);
         EDTFCMixingRecipes.build(consumer);

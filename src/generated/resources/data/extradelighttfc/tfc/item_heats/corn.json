@@ -1,0 +1,14 @@
+{
+  "heat_capacity": 1.0,
+  "ingredient": [
+    {
+      "item": "tfc:food/maize_grain"
+    },
+    {
+      "item": "extradelight:popcorn"
+    },
+    {
+      "item": "extradelight:cooked_corn"
+    }
+  ]
+}

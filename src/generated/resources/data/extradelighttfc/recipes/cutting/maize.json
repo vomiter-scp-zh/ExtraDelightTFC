@@ -1,0 +1,27 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "type": "tfc:not_rotten",
+      "ingredient": {
+        "item": "tfc:food/maize"
+      }
+    }
+  ],
+  "result": [
+    {
+      "modifiers": [
+        "tfc:copy_food"
+      ],
+      "stack": {
+        "item": "tfc:food/maize_grain"
+      }
+    },
+    {
+      "item": "extradelight:corn_cob"
+    }
+  ],
+  "tool": {
+    "tag": "tfc:knives"
+  }
+}

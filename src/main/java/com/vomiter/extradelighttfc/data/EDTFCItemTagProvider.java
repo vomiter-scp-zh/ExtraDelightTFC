@@ -1,36 +1,34 @@
 package com.vomiter.extradelighttfc.data;
 
-import vectorwing.farmersdelight.common.registry.ModItems;
-import vectorwing.farmersdelight.common.tag.ModTags;
-import net.dries007.tfc.common.TFCTags;
-import net.minecraft.tags.BlockTags;
-import net.minecraftforge.common.Tags;
-
-import com.vomiter.extradelight.registry.ExtraDelightItems;
-import com.vomiter.extradelight.registry.SummerCitrus;
-import com.vomiter.extradelight.registry.Fermentation;
-import net.dries007.tfc.common.items.Powder;
-import com.vomiter.extradelighttfc.ExtraDelightTFC;
 import com.vomiter.extradelight.data.tags.ExtraDelightTags;
+import com.vomiter.extradelight.registry.ExtraDelightItems;
+import com.vomiter.extradelight.registry.Fermentation;
+import com.vomiter.extradelight.registry.SummerCitrus;
+import com.vomiter.extradelighttfc.ExtraDelightTFC;
 import com.vomiter.extradelighttfc.registry.EDTFCItems;
 import com.vomiter.extradelighttfc.util.FoodUtils;
+import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.items.Food;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.resources.ResourceLocation;
-import java.util.EnumSet;
 import net.dries007.tfc.common.items.TFCItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.tag.ModTags;
 
+import java.util.EnumSet;
 import java.util.concurrent.CompletableFuture;
 
 public class EDTFCItemTagProvider extends ItemTagsProvider {
@@ -46,6 +44,12 @@ public class EDTFCItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
+        tag(TFCTags.Items.COMPOST_BROWNS_LOW).add(
+                ExtraDelightItems.CORN_SILK.get(),
+                ExtraDelightItems.CORN_HUSK.get(),
+                ExtraDelightItems.CORN_COB.get()
+        );
+        tag(TFCTags.Items.COMPOST_BROWNS).add(ExtraDelightItems.DRIED_CORN_HUSK.get());
         copy(BlockTags.FENCES, ItemTags.FENCES);
         copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
         copy(Tags.Blocks.FENCES_WOODEN, Tags.Items.FENCES_WOODEN);

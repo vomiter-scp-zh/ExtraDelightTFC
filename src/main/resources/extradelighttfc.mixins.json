@@ -30,7 +30,8 @@
     "MixingBowlRecipeMixin",
     "HeatingRecipeNutrientsMixin",
     "FLOvenRecipeNutrientsMixin",
-    "DoughShapingFoodMixin"
+    "DoughShapingFoodMixin",
+    "ShuckableCornFoodMixin"
   ],
   "client": [],
   "injectors": {
