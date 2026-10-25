@@ -23,14 +23,15 @@ import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 public final class DoughProcessingRecipes {
+    public static final int COOKIES_PER_DOUGH = 4;
     public record Cookie(String name, Supplier<? extends Item> dough, Supplier<? extends Item> baked, int count, int time) {}
     public static final List<Cookie> COOKIES = List.of(
-            new Cookie("apple", ExtraDelightItems.APPLE_COOKIE_DOUGH, ExtraDelightItems.APPLE_COOKIE, 8, 400),
-            new Cookie("gingerbread", ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH, ExtraDelightItems.GINGERBREAD_COOKIE, 8, 800),
-            new Cookie("nut_butter", ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH, ExtraDelightItems.NUT_BUTTER_COOKIE, 8, 400),
-            new Cookie("pumpkin", ExtraDelightItems.PUMPKIN_COOKIE_DOUGH, ExtraDelightItems.PUMPKIN_COOKIE, 8, 400),
-            new Cookie("sugar", ExtraDelightItems.SUGAR_COOKIE_DOUGH, ExtraDelightItems.SUGAR_COOKIE, 8, 800),
-            new Cookie("sweet_berry", ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH, ModItems.SWEET_BERRY_COOKIE, 8, 400),
+            new Cookie("apple", ExtraDelightItems.APPLE_COOKIE_DOUGH, ExtraDelightItems.APPLE_COOKIE, COOKIES_PER_DOUGH, 400),
+            new Cookie("gingerbread", ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH, ExtraDelightItems.GINGERBREAD_COOKIE, COOKIES_PER_DOUGH, 800),
+            new Cookie("nut_butter", ExtraDelightItems.NUT_BUTTER_COOKIE_DOUGH, ExtraDelightItems.NUT_BUTTER_COOKIE, COOKIES_PER_DOUGH, 400),
+            new Cookie("pumpkin", ExtraDelightItems.PUMPKIN_COOKIE_DOUGH, ExtraDelightItems.PUMPKIN_COOKIE, COOKIES_PER_DOUGH, 400),
+            new Cookie("sugar", ExtraDelightItems.SUGAR_COOKIE_DOUGH, ExtraDelightItems.SUGAR_COOKIE, COOKIES_PER_DOUGH, 800),
+            new Cookie("sweet_berry", ExtraDelightItems.SWEET_BERRY_COOKIE_DOUGH, ModItems.SWEET_BERRY_COOKIE, COOKIES_PER_DOUGH, 400),
             new Cookie("sugar_cookie_steve", ExtraDelightItems.RAW_SUGAR_COOKIE_STEVE, ExtraDelightItems.SUGAR_COOKIE_STEVE, 1, 800),
             new Cookie("sugar_cookie_alex", ExtraDelightItems.RAW_SUGAR_COOKIE_ALEX, ExtraDelightItems.SUGAR_COOKIE_ALEX, 1, 800),
             new Cookie("sugar_cookie_villager", ExtraDelightItems.RAW_SUGAR_COOKIE_VILLAGER, ExtraDelightItems.SUGAR_COOKIE_VILLAGER, 1, 800),
@@ -57,7 +58,7 @@ public final class DoughProcessingRecipes {
             if (cookie.count == 1) {
                 Supplier<? extends Item> parent = cookie.name.startsWith("sugar_cookie_")
                         ? ExtraDelightItems.SUGAR_COOKIE_DOUGH : ExtraDelightItems.GINGERBREAD_COOKIE_DOUGH;
-                shape(out, cookie.name, Ingredient.of(parent.get()), new ItemStack(cookie.dough.get(), 8));
+                shape(out, cookie.name, Ingredient.of(parent.get()), new ItemStack(cookie.dough.get(), COOKIES_PER_DOUGH));
             }
             bake(out, cookie, false);
             bake(out, cookie, true);
