@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "survivorsdelight:planks/cabinet/aspen"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:aspen_half_cabinet"
+  }
+}

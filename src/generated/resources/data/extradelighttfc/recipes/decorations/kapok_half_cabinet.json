@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "survivorsdelight:planks/cabinet/kapok"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:kapok_half_cabinet"
+  }
+}

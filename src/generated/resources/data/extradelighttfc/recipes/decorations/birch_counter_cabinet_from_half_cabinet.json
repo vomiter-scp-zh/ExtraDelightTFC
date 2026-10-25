@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "extradelighttfc:birch_half_cabinet"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:birch_counter_cabinet"
+  }
+}

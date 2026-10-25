@@ -1,0 +1,22 @@
+{
+  "type": "tfc:damage_inputs_shaped_crafting",
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "key": {
+      "k": {
+        "tag": "tfc:knives"
+      },
+      "w": {
+        "item": "tfc:wood/planks/douglas_fir_slab"
+      }
+    },
+    "pattern": [
+      "wkw"
+    ],
+    "result": {
+      "item": "extradelighttfc:douglas_fir_knife_block"
+    },
+    "show_notification": true
+  }
+}

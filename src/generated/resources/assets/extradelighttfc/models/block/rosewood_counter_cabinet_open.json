@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "front": "survivorsdelight:block/planks/cabinet/rosewood_front_open",
+    "side": "survivorsdelight:block/planks/cabinet/rosewood_side",
+    "top": "survivorsdelight:block/planks/cabinet/rosewood_top"
+  }
+}

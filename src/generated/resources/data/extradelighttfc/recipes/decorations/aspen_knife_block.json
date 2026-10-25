@@ -1,0 +1,22 @@
+{
+  "type": "tfc:damage_inputs_shaped_crafting",
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "key": {
+      "k": {
+        "tag": "tfc:knives"
+      },
+      "w": {
+        "item": "tfc:wood/planks/aspen_slab"
+      }
+    },
+    "pattern": [
+      "wkw"
+    ],
+    "result": {
+      "item": "extradelighttfc:aspen_knife_block"
+    },
+    "show_notification": true
+  }
+}

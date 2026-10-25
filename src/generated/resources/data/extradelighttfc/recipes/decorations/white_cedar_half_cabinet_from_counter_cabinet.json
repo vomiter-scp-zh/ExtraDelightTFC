@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "extradelighttfc:white_cedar_counter_cabinet"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:white_cedar_half_cabinet"
+  }
+}

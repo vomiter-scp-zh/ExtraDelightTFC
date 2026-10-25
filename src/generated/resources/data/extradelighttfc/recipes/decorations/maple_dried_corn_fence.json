@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "tfc:wood/planks/maple_fence"
+    },
+    {
+      "item": "extradelight:dried_corn_husk"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:maple_dried_corn_fence"
+  }
+}

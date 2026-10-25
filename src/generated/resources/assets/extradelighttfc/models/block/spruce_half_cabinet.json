@@ -1,0 +1,10 @@
+{
+  "parent": "extradelight:block/half_cabinet",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "survivorsdelight:block/planks/cabinet/spruce_front",
+    "1": "survivorsdelight:block/planks/cabinet/spruce_side",
+    "2": "survivorsdelight:block/planks/cabinet/spruce_top",
+    "particle": "survivorsdelight:block/planks/cabinet/spruce_front"
+  }
+}

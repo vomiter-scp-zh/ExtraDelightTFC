@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "survivorsdelight:planks/cabinet/white_cedar"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:white_cedar_counter_cabinet"
+  }
+}

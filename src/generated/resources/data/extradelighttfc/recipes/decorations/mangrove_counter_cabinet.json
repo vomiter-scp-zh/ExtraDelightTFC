@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "survivorsdelight:planks/cabinet/mangrove"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:mangrove_counter_cabinet"
+  }
+}

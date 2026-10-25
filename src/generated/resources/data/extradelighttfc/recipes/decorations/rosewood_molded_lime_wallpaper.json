@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/lime"
+    },
+    {
+      "item": "tfc:wood/planks/rosewood_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelighttfc:rosewood_molded_lime_wallpaper"
+  }
+}

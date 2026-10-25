@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "vertical_direction=down": {
+      "model": "extradelighttfc:block/blackwood_molded_brown_wallpaper"
+    },
+    "vertical_direction=up": {
+      "model": "extradelighttfc:block/blackwood_molded_brown_wallpaper_top"
+    }
+  }
+}

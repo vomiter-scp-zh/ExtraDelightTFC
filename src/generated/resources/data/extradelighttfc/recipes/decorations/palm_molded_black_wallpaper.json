@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/black"
+    },
+    {
+      "item": "tfc:wood/planks/palm_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelighttfc:palm_molded_black_wallpaper"
+  }
+}

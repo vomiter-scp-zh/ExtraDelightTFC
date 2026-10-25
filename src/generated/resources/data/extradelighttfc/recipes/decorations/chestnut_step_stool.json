@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "s": {
+      "tag": "forge:rods/wooden"
+    },
+    "w": {
+      "item": "tfc:wood/planks/chestnut_slab"
+    }
+  },
+  "pattern": [
+    " w ",
+    "s s",
+    "s s"
+  ],
+  "result": {
+    "item": "extradelighttfc:chestnut_step_stool"
+  },
+  "show_notification": true
+}

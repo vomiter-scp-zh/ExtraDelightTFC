@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "extradelighttfc:acacia_half_cabinet"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:acacia_counter_cabinet"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "extradelight:block/dried_corn_fence",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "1": "tfc:block/wood/planks/rosewood"
+  }
+}

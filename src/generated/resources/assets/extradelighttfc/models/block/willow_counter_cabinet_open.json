@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "front": "survivorsdelight:block/planks/cabinet/willow_front_open",
+    "side": "survivorsdelight:block/planks/cabinet/willow_side",
+    "top": "survivorsdelight:block/planks/cabinet/willow_top"
+  }
+}

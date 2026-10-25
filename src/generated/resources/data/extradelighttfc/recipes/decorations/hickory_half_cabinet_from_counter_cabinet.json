@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "extradelighttfc:hickory_counter_cabinet"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:hickory_half_cabinet"
+  }
+}

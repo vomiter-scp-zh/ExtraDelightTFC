@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "s": {
+      "tag": "forge:rods/wooden"
+    },
+    "w": {
+      "item": "tfc:wood/planks/white_cedar_slab"
+    }
+  },
+  "pattern": [
+    " w ",
+    "s s",
+    "s s"
+  ],
+  "result": {
+    "item": "extradelighttfc:white_cedar_step_stool"
+  },
+  "show_notification": true
+}

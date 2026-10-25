@@ -1,0 +1,12 @@
+{
+  "parent": "extradelight:block/sink_cabinet_bare",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "extradelight:block/tap",
+    "1": "survivorsdelight:block/planks/cabinet/willow_front",
+    "2": "survivorsdelight:block/planks/cabinet/willow_side",
+    "3": "survivorsdelight:block/planks/cabinet/willow_top",
+    "4": "tfc:block/wood/planks/willow",
+    "particle": "survivorsdelight:block/planks/cabinet/willow_front"
+  }
+}

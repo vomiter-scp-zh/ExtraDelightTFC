@@ -2,6 +2,7 @@ package com.vomiter.extradelighttfc.data;
 
 import com.vomiter.extradelighttfc.ExtraDelightTFC;
 import com.vomiter.extradelighttfc.registry.EDTFCItems;
+import com.vomiter.extradelighttfc.registry.EDTFCDecorations;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -15,6 +16,9 @@ public final class EDTFCItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         pestles();
+        EDTFCDecorations.BLOCKS.getEntries().forEach(block ->
+                withExistingParent(block.getId().getPath(), block.getId().withPrefix("block/")));
+
         withExistingParent("item/" + EDTFCItems.STONE_SPOON.getId().getPath(),
                 ResourceLocation.fromNamespaceAndPath("extradelight", "item/stone_spoon"));
         withExistingParent("item/" + EDTFCItems.STONE_SPOON_HEAD.getId().getPath(), mcLoc("item/generated"))

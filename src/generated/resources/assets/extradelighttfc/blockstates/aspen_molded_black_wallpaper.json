@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "vertical_direction=down": {
+      "model": "extradelighttfc:block/aspen_molded_black_wallpaper"
+    },
+    "vertical_direction=up": {
+      "model": "extradelighttfc:block/aspen_molded_black_wallpaper_top"
+    }
+  }
+}

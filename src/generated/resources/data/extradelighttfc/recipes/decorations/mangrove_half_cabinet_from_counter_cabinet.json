@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "extradelighttfc:mangrove_counter_cabinet"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:mangrove_half_cabinet"
+  }
+}

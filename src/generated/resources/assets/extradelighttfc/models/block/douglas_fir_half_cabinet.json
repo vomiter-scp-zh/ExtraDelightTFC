@@ -1,0 +1,10 @@
+{
+  "parent": "extradelight:block/half_cabinet",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "survivorsdelight:block/planks/cabinet/douglas_fir_front",
+    "1": "survivorsdelight:block/planks/cabinet/douglas_fir_side",
+    "2": "survivorsdelight:block/planks/cabinet/douglas_fir_top",
+    "particle": "survivorsdelight:block/planks/cabinet/douglas_fir_front"
+  }
+}

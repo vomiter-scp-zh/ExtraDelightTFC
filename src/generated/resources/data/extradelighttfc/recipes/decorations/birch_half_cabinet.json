@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "survivorsdelight:planks/cabinet/birch"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:birch_half_cabinet"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "extradelighttfc:sycamore_half_cabinet"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:sycamore_counter_cabinet"
+  }
+}

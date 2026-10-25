@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "survivorsdelight:planks/cabinet/blackwood"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:blackwood_half_cabinet"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "vertical_direction=down": {
+      "model": "extradelighttfc:block/kapok_molded_blue_wallpaper"
+    },
+    "vertical_direction=up": {
+      "model": "extradelighttfc:block/kapok_molded_blue_wallpaper_top"
+    }
+  }
+}

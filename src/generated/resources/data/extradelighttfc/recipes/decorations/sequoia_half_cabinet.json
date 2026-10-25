@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "survivorsdelight:planks/cabinet/sequoia"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:sequoia_half_cabinet"
+  }
+}

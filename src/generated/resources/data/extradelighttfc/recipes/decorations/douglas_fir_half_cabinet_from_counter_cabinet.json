@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "extradelighttfc:douglas_fir_counter_cabinet"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:douglas_fir_half_cabinet"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "vertical_direction=down": {
+      "model": "extradelighttfc:block/oak_molded_light_gray_wallpaper"
+    },
+    "vertical_direction=up": {
+      "model": "extradelighttfc:block/oak_molded_light_gray_wallpaper_top"
+    }
+  }
+}

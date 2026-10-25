@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "survivorsdelight:planks/cabinet/oak"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:oak_half_cabinet"
+  }
+}

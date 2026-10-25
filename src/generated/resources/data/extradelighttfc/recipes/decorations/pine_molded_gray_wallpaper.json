@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/gray"
+    },
+    {
+      "item": "tfc:wood/planks/pine_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelighttfc:pine_molded_gray_wallpaper"
+  }
+}

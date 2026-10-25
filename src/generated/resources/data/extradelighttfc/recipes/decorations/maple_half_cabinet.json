@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "survivorsdelight:planks/cabinet/maple"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:maple_half_cabinet"
+  }
+}

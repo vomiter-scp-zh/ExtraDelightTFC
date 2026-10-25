@@ -44,6 +44,8 @@ minecraft {
                     '--all',
                     '--existing-mod', 'tfc',
                     '--existing-mod', 'extradelight',
+                    '--existing-mod', 'farmersdelight',
+                    '--existing-mod', 'survivorsdelight',
                     '--output', file('src/generated/resources/'),
                     '--existing', file('src/main/resources/')
 

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "vertical_direction=down": {
+      "model": "extradelighttfc:block/ash_molded_orange_wallpaper"
+    },
+    "vertical_direction=up": {
+      "model": "extradelighttfc:block/ash_molded_orange_wallpaper_top"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "tfc:damage_inputs_shaped_crafting",
+  "recipe": {
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "key": {
+      "k": {
+        "tag": "tfc:knives"
+      },
+      "w": {
+        "item": "tfc:wood/planks/blackwood_slab"
+      }
+    },
+    "pattern": [
+      "wkw"
+    ],
+    "result": {
+      "item": "extradelighttfc:blackwood_knife_block"
+    },
+    "show_notification": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "survivorsdelight:planks/cabinet/palm"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:palm_counter_cabinet"
+  }
+}

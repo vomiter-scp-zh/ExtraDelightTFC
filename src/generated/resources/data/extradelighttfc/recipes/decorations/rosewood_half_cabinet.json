@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "survivorsdelight:planks/cabinet/rosewood"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:rosewood_half_cabinet"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "extradelighttfc:aspen_half_cabinet"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:aspen_counter_cabinet"
+  }
+}

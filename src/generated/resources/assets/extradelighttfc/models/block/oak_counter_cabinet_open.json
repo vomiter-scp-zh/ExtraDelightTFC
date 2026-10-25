@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "front": "farmersdelight:block/oak_cabinet_front_open",
+    "side": "farmersdelight:block/oak_cabinet_side",
+    "top": "farmersdelight:block/oak_cabinet_top"
+  }
+}

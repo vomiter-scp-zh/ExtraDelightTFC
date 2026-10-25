@@ -25,6 +25,7 @@ public class EDTFCDataGenerator {
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         ExistingFileHelper helper = event.getExistingFileHelper();
+        generator.addProvider(event.includeClient(), new EDTFCDecorationBlockStateProvider(output, helper));
 
         var blockTag = new EDTFCBlockTagProvider(output, lookupProvider, ExtraDelightTFC.MOD_ID, helper);
         generator.addProvider(event.includeServer(), blockTag);
@@ -38,7 +39,8 @@ public class EDTFCDataGenerator {
                         LootTable.lootTable().withPool(LootPool.lootPool()
                                 .setRolls(ConstantValue.exactly(1))
                                 .add(LootItem.lootTableItem(TFCItems.POWDERS.get(Powder.SALT).get())))),
-                        LootContextParamSets.ARCHAEOLOGY))));
+                        LootContextParamSets.ARCHAEOLOGY),
+                new LootTableProvider.SubProviderEntry(EDTFCDecorationBlockLoot::new, LootContextParamSets.BLOCK))));
         generator.addProvider(event.includeClient(), new EDTFCItemModelProvider(output, helper));
         generator.addProvider(event.includeClient(), new EDTFCLanguageProvider(output, "en_us"));
         generator.addProvider(event.includeClient(), new EDTFCLanguageProvider(output, "zh_tw"));

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "tag": "forge:dyes/yellow"
+    },
+    {
+      "item": "tfc:wood/planks/hickory_slab"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "extradelighttfc:hickory_molded_yellow_wallpaper"
+  }
+}

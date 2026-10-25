@@ -1,6 +1,10 @@
 package com.vomiter.extradelighttfc.data;
 
 import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.tag.ModTags;
+import net.dries007.tfc.common.TFCTags;
+import net.minecraft.tags.BlockTags;
+import net.minecraftforge.common.Tags;
 
 import com.vomiter.extradelight.registry.ExtraDelightItems;
 import com.vomiter.extradelight.registry.SummerCitrus;
@@ -42,6 +46,12 @@ public class EDTFCItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
+        copy(BlockTags.FENCES, ItemTags.FENCES);
+        copy(BlockTags.WOODEN_FENCES, ItemTags.WOODEN_FENCES);
+        copy(Tags.Blocks.FENCES_WOODEN, Tags.Items.FENCES_WOODEN);
+        tag(ModTags.Items.KNIVES).addTag(TFCTags.Items.KNIVES);
+        tag(EDTFCTags.FORGE_FRUITS).addTag(EDTFCTags.TFC_FRUITS);
+
         TagKey<Item> forgeSpoons = ItemTags.create(ResourceLocation.fromNamespaceAndPath("forge", "spoons"));
         tag(ExtraDelightTags.SPOONS).add(EDTFCItems.STONE_SPOON.get());
         tag(forgeSpoons).add(EDTFCItems.STONE_SPOON.get());

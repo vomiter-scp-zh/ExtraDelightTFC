@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "extradelighttfc:block/sycamore_sink",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "extradelighttfc:block/sycamore_sink"
+    },
+    "facing=south": {
+      "model": "extradelighttfc:block/sycamore_sink",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "extradelighttfc:block/sycamore_sink",
+      "y": 270
+    }
+  }
+}

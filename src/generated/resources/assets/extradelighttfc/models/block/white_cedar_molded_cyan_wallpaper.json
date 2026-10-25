@@ -1,0 +1,9 @@
+{
+  "parent": "extradelight:block/molding_bottom",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "0": "extradelight:block/wallpaper_cyan",
+    "1": "tfc:block/wood/planks/white_cedar",
+    "particle": "extradelight:block/wallpaper_cyan"
+  }
+}

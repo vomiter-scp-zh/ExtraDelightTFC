@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "extradelighttfc:block/pine_step_stool",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "extradelighttfc:block/pine_step_stool"
+    },
+    "facing=south": {
+      "model": "extradelighttfc:block/pine_step_stool",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "extradelighttfc:block/pine_step_stool",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "vertical_direction=down": {
+      "model": "extradelighttfc:block/chestnut_molded_magenta_wallpaper"
+    },
+    "vertical_direction=up": {
+      "model": "extradelighttfc:block/chestnut_molded_magenta_wallpaper_top"
+    }
+  }
+}

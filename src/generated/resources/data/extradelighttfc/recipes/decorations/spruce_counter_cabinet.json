@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "survivorsdelight:planks/cabinet/spruce"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:spruce_counter_cabinet"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "extradelighttfc:maple_counter_cabinet"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:maple_half_cabinet"
+  }
+}

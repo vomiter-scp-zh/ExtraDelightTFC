@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "extradelighttfc:palm_half_cabinet"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:palm_counter_cabinet"
+  }
+}

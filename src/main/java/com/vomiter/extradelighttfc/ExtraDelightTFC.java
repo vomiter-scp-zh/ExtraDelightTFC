@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.vomiter.extradelighttfc.common.recipe.DriedModifier;
 import com.vomiter.extradelighttfc.common.recipe.PortionFoodModifier;
 import com.vomiter.extradelighttfc.registry.EDTFCFoodTraits;
+import com.vomiter.extradelighttfc.registry.EDTFCDecorations;
 import net.dries007.tfc.common.recipes.outputs.ItemStackModifiers;
 import com.vomiter.extradelighttfc.adapter.EDMixingBowlAdapter;
 import com.vomiter.extradelighttfc.util.ExtraNutrientsAfterHeating;
@@ -45,6 +46,7 @@ public class ExtraDelightTFC {
 
     public ExtraDelightTFC(FMLJavaModLoadingContext context) {
         IEventBus modBus = context.getModEventBus();
+        EDTFCDecorations.register(modBus);
         EDTFCFoodTraits.init();
         MinecraftForge.EVENT_BUS.addListener(EventPriority.LOWEST, EDTFCFoodTraits::reloadDryingFoods);
         ItemStackModifiers.register(modLoc("dried"), DriedModifier.INSTANCE);

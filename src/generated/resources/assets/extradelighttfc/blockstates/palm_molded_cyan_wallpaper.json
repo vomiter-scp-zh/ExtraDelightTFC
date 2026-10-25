@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "vertical_direction=down": {
+      "model": "extradelighttfc:block/palm_molded_cyan_wallpaper"
+    },
+    "vertical_direction=up": {
+      "model": "extradelighttfc:block/palm_molded_cyan_wallpaper_top"
+    }
+  }
+}

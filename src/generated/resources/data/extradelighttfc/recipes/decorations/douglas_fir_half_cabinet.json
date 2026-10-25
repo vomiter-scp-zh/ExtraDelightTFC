@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "survivorsdelight:planks/cabinet/douglas_fir"
+    }
+  ],
+  "result": {
+    "item": "extradelighttfc:douglas_fir_half_cabinet"
+  }
+}

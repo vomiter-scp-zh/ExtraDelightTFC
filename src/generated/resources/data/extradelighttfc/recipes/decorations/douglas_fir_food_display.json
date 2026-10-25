@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "s": {
+      "tag": "forge:rods/wooden"
+    },
+    "w": {
+      "item": "tfc:wood/planks/douglas_fir_slab"
+    }
+  },
+  "pattern": [
+    " s ",
+    " w ",
+    " s "
+  ],
+  "result": {
+    "item": "extradelighttfc:douglas_fir_food_display"
+  },
+  "show_notification": true
+}
